@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+        <div id="container">
+            @@include('@@webRoot/_include/_aside.html')
+            <main id="main">
+
+                @@include('@@webRoot/_include/_lnb.html')
+
+                <!-- 실컨텐츠 -->
+                <h1 class="visually-hidden">공급사 정보 관리</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+
+                <!-- //실컨텐츠 -->
+
+            </main> <!-- main -->
+        </div>
+    </div>
+    @@include('@@webRoot/_include/_modal.html')
+</body>
+
+</html>

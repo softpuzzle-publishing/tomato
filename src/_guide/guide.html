@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+    <style>
+        body{background: #fff;padding: 1rem 0 2rem;}
+        .container-fluid{ display:flex; flex-wrap: wrap;}
+        section {border-bottom: 1px solid #e8e8e8;flex: 0 0 50%;padding:1rem;}
+        h1 {font-size: 1.5rem;color: #df1f1f;margin-bottom: .5rem;}
+        p{font-size: 1rem;}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <section>
+            <h1>Text</h1>
+            <div>
+                <p>
+                    <span>text normal(400)</span>
+                    <span class="fw-medium">text medium(500)</span>
+                    <span class="fw-bold">text bold(700)</span>
+                </p>
+                <p class="text-dark">text default #3c3c3c</p>
+                <p class="text-secondary">text secondary</p>
+                <p class="text-info">text info</p>
+                <p class="text-success">text success</p>
+                <p class="text-danger">text danger</p>
+                <p class="text-start">align start</p>
+                <p class="text-center">align center</p>
+                <p class="text-end">align end</p>
+            </div>
+        </section>
+        <section>
+            <h1>아이콘</h1>
+            <div>
+                <i class="icon-home"></i>
+            </div>
+        </section>
+        <section>
+            <h1>pagination</h1>
+            <div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="icon-paging-first"></i></a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="icon-paging-prev"></i></a>
+                        </li>
+                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="icon-paging-next"></i></a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="icon-paging-end"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section>
+            <h1>버튼</h1>
+            <div class="mb-2">
+                <div>
+                    <button class="btn btn-primary w-100" type="button">button block</button>
+                    <button class="btn btn-outline-info w-100" type="button">button block</button>
+                </div>
+                <div>
+                    <button class="btn btn-dark">dark</button>
+                    <button class="btn btn-dark" disabled>dark disabled</button>
+                </div>
+                <div>
+                    <button class="btn btn-secondary">secondary</button>
+                    <button class="btn btn-secondary" disabled>secondary disabled</button>
+                </div>
+                <div>
+                    <button class="btn btn-primary">primary</button>
+                    <button class="btn btn-outline-primary">outline primary</button>
+                    <button class="btn btn-primary" disabled>primary disabled</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-primary px-6">조회(좌우여백추가)</button>
+                    <button type="button" class="btn btn-primary px-6">확인(좌우여백추가)</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>Form</h1>
+            <div>
+                <div><input type="text" class="form-control" placeholder="placeholder"></div>
+                <div><input type="text" class="form-control" placeholder="placeholder" value="value"></div>
+                <div><input type="text" class="form-control" placeholder="placeholder" disabled></div>
+                <div><input type="text" class="form-control" placeholder="placeholder" value="Disabled readonly" disabled readonly></div>
+                <div class="mb-2">
+                    <select class="form-select" aria-label="Default select">
+                        <option selected>선택하세요</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <select class="form-select form-select-sm" aria-label="Default select">
+                        <option selected>선택하세요</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                        <label class="form-check-label" for="flexCheckDisabled">
+                            Disabled checkbox
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexCheckCheckedDisabled">
+                            Disabled checked checkbox
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex mt-1">
+                    <div class="form-check form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexCheckCircle" id="flexCheckCircle1">
+                        <label class="form-check-label" for="flexCheckCircle1">
+                            Circle checkbox
+                        </label>
+                    </div>
+                    <div class="form-check form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexCheckCircle" id="flexCheckCircle2" checked>
+                        <label class="form-check-label" for="flexCheckCircle2">
+                            Circle checked checkbox
+                        </label>
+                    </div>
+                    <div class="form-check form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+                        <label class="form-check-label" for="flexRadioDisabled">
+                            Disabled checkbox
+                        </label>
+                    </div>
+                    <div class="form-check form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexRadioCheckedDisabled">
+                            Disabled checked checkbox
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex mt-1">
+                    <div class="form-check form-check-lg form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexCheckCircle" id="flexCheckCircle1">
+                        <label class="form-check-label" for="flexCheckCircle1">
+                            Circle checkbox large
+                        </label>
+                    </div>
+                    <div class="form-check form-check-lg form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexCheckCircle" id="flexCheckCircle2" checked>
+                        <label class="form-check-label" for="flexCheckCircle2">
+                            Circle checked checkbox large
+                        </label>
+                    </div>
+                    <div class="form-check form-check-lg form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+                        <label class="form-check-label" for="flexRadioDisabled">
+                            Disabled checkbox large
+                        </label>
+                    </div>
+                    <div class="form-check form-check-lg form-check-circle">
+                        <input class="form-check-input" type="checkbox" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexRadioCheckedDisabled">
+                            Disabled checked checkbox large
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex mt-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Default radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Default checked radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+                        <label class="form-check-label" for="flexRadioDisabled">
+                            Disabled radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexRadioCheckedDisabled">
+                            Disabled checked radio
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-1">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                        <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="btn-group">
+                        <input type="radio" class="btn-check" name="options" id="option1" checked>
+                        <label class="btn btn-success" for="option1">사용 가능</label>
+                        <input type="radio" class="btn-check" name="options" id="option2">
+                        <label class="btn btn-danger" for="option2">사용 불가</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1>list group</h1>
+            <div style="background-color: #EBEDF3;padding: 1rem;">
+                <div class="list-group list-group-card-type">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">서플라이어</h5>
+                            <div class="text-primary">2318731098152</div>
+                        </div>
+                        <div class="mb-1">217-15-39784</div>
+                        <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">푸드비투비</h5>
+                            <div class="text-primary">2318731098152</div>
+                        </div>
+                        <div class="mb-1">217-15-39784</div>
+                        <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                    </a>
+                </div>
+                <script>
+                    $('.list-group-item-action').on('click', function(e){
+                        e.preventDefault();
+                        $(this).siblings('.list-group-item-action').removeClass('active');
+                        $(this).addClass('active');
+                    })
+                </script>
+            </div>
+        </section>
+        <section>
+            <h1>badge</h1>
+            <div>
+                <span class="badge bg-primary">primary</span>
+                <span class="badge bg-secondary">secondary</span>
+                <span class="badge bg-success">사용 가능</span>
+                <span class="badge bg-danger">사용 불가</span>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
