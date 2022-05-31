@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+    <title>(modal_login)TOMATO B2B</title>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-Compatible" content="IE=edge">
     <title>TOMATO B2B</title>
@@ -27,43 +28,26 @@
 
     <!-- publishing js -->
     <script src="../assets/js/ui.js" defer></script>
+    <style>
+        body {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal {
+            display: block !important;
+            position: static !important;
+            height: auto !important;
+        }
+
+        .modal-dialog {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="wrap">
-
-        <div class="login-wrap">
-            <div class="login">
-                <h1><img src="../assets/images/bi.svg" alt="TomaTo SUPPLY"></h1>
-                <div>
-                    <input type="tel" class="form-control with-icon-mobile" placeholder="휴대폰 연락처" title="휴대폰 연락처">
-                    <input type="password" class="form-control with-icon-lock mt-5" placeholder="비밀번호" title="비밀번호">
-                    <div class="form-check form-check-circle mt-4">
-                        <input class="form-check-input" type="checkbox" id="login-stay">
-                        <label class="form-check-label" for="login-stay">
-                            로그인 상태 유지
-                        </label>
-                    </div>
-                    <div class="alert-error">
-                        <p class="text-danger">
-                            등록된 휴대폰 번호 및 비밀번호가 일치하지 않습니다. <br>
-                            입력한 내용을 다시 확인해주세요.
-                        </p>
-                    </div>
-                    <div class="d-grid mt-5">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-supplier-select">로그인</button>
-                    </div>
-                </div>
-                <div class="d-grid join-us">
-                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modal-user-certication">새로운 계정 등록</button>
-                </div>
-                <p class="forgot"><a href="#modal-password-reset" data-bs-toggle="modal" role="button">비밀번호를 잊으셨나요?</a></p>
-            </div>
-            <p class="copyright">ⓒ Copyright Retail & Insight 2022. All rights reserved.</p>
-        </div>
-
-    </div>
-
     <!-- modal : 공급사 선택 -->
     <div class="modal" id="modal-supplier-select" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -621,7 +605,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

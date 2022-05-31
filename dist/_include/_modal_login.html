@@ -1,0 +1,557 @@
+<!-- modal : 공급사 선택 -->
+<div class="modal" id="modal-supplier-select" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">공급사 선택 <span class="fw-normal">(0)</span></h5>
+            </div>
+            <div class="modal-body pb-0">
+                <div class="row gx-3 mb-4">
+                    <div class="col">
+                        <input type="text" class="form-control with-icon-search" placeholder="검색어 입력">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-outline-primary px-6">조회</button>
+                    </div>
+                </div>
+                <div class="supplier-select">
+                    <!-- data empty -->
+                    <p class="data-empty">등록된 공급사 목록이 존재하지 않습니다.</p>
+                    <div class="list-group-wrap">
+                        <div class="list-group list-group-card-type">
+
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5><span class="text-primary">서플</span>라이어</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5>푸드비투비</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5><span class="text-primary">서플</span>라이어</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5>푸드비투비</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5><span class="text-primary">서플</span>라이어</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5>푸드비투비</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5><span class="text-primary">서플</span>라이어</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5>푸드비투비</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5><span class="text-primary">서플</span>라이어</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between mb-4">
+                                    <h5>푸드비투비</h5>
+                                    <div class="text-primary">2318731098152</div>
+                                </div>
+                                <div class="mb-1">217-15-39784</div>
+                                <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
+                            </a>
+
+                        </div>
+                    </div>
+                    <script>
+                        $('.list-group-item-action').on('click', function(e) {
+                            e.preventDefault();
+                            $(this).siblings('.list-group-item-action').removeClass('active');
+                            $(this).addClass('active');
+                        })
+                    </script>
+                </div>
+            </div>
+            <div class="modal-footer border-top-0">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal : 비밀번호 초기화 인증-->
+<div class="modal" id="modal-password-reset" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ol class="pager">
+                    <li class="active">STEP 1</li>
+                    <li>STEP 2</li>
+                </ol>
+                <h5 class="modal-title">비밀번호 초기화 인증</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-error" style="display: none">
+                    <p>인증번호가 일치하지 않습니다. <br>
+                        올바른 인증번호를 입력해주세요.</p>
+                </div>
+                <input type="tel" class="form-control with-icon-mobile" placeholder="등록된 휴대폰 연락처">
+                <button type="button" class="btn btn-outline-primary w-100 mt-5" id="btnCertification">인증번호 발송</button>
+                <script>
+                    $('#btnCertification').on('click', function() {
+                        $(this).siblings('.form-error').show();
+                        $(this).siblings('.certification').show();
+                    });
+                </script>
+                <div class="certification" style="display: none">
+                    <!-- 인증전 -->
+                    <div class="row gx-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control with-icon-certification" placeholder="인증번호 입력">
+                                <span class="timer">2:59</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary px-6">확인</button>
+                        </div>
+                    </div>
+                    <!-- 인증후 -->
+                    <div class="certificated">
+                        <p>인증이 완료되었습니다.</p>
+                    </div>
+                    <p class="form-text mt-4">
+                        입력하신 연락처로 <strong>인증번호</strong>가 발송됐습니다. <br>
+                        인증번호가 발송되지 않을 경우 인증번호 재발송을 입력하신 휴대폰 번호가 <br>
+                        정확한지 확인해주세요.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-target="#modal-password-reset-change" data-bs-toggle="modal">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal : 비밀번호 변경 -->
+<div class="modal" id="modal-password-reset-change" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ol class="pager">
+                    <li>STEP 1</li>
+                    <li class="active">STEP 2</li>
+                </ol>
+                <h5 class="modal-title">비밀번호 변경</h5>
+                <a href="#modal-password-reset" class="back" aria-label="뒤로" data-bs-toggle="modal"><i class="icon-back"></i></a>
+            </div>
+            <div class="modal-body">
+                <div class="form-error">
+                    <p>비밀번호가 일치하지 않습니다. <br>
+                        올바른 비밀번호를 입력해주세요.</p>
+                </div>
+                <div class="mb-4">
+                    <label for="newPw" class="form-label">새로운 비밀번호</label>
+                    <input type="password" class="form-control" id="newPw">
+                </div>
+                <div>
+                    <label for="newPwRe" class="form-label">새로운 비밀번호 확인</label>
+                    <input type="password" class="form-control" id="newPwRe">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#alert-password-changed">변경완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- alert : 비밀번호 변경 완료 -->
+<div class="modal" id="alert-password-changed" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert-message">
+                    비밀번호 변경이 완료되었습니다. <br>
+                    로그인을 진행해주세요.
+                </div>
+            </div>
+            <div class="modal-footer border-top-0">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal : 새로운 계정 등록 - 사용자 인증 -->
+<div class="modal" id="modal-user-certication" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ol class="pager">
+                    <li class="active">STEP 1</li>
+                    <li>STEP 2</li>
+                    <li>STEP 3</li>
+                </ol>
+                <h5 class="modal-title">사용자 인증</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-error" style="display: none">
+                    <p>인증번호가 일치하지 않습니다. <br>
+                        올바른 인증번호를 입력해주세요.</p>
+                </div>
+                <input type="tel" class="form-control with-icon-mobile" placeholder="등록된 휴대폰 연락처">
+                <button type="button" class="btn btn-outline-primary w-100 mt-5" id="btnCertification2">인증번호 발송</button>
+                <script>
+                    $('#btnCertification2').on('click', function() {
+                        $(this).siblings('.form-error').show();
+                        $(this).siblings('.certification').show();
+                    });
+                </script>
+                <div class="certification" style="display: none">
+                    <!-- 인증전 -->
+                    <div class="row gx-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control with-icon-certification" placeholder="인증번호 입력">
+                                <span class="timer">2:59</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary px-6">확인</button>
+                        </div>
+                    </div>
+                    <!-- 인증후 -->
+                    <div class="certificated">
+                        <p>인증이 완료되었습니다.</p>
+                    </div>
+                    <p class="form-text mt-4">
+                        입력하신 연락처로 <strong>인증번호</strong>가 발송됐습니다. <br>
+                        인증번호가 발송되지 않을 경우 인증번호 재발송을 입력하신 휴대폰 번호가 <br>
+                        정확한지 확인해주세요.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-target="#modal-user-info-input" data-bs-toggle="modal">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal : 새로운 계정 등록 - 사용자 정보 등록 -->
+<div class="modal" id="modal-user-info-input" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ol class="pager">
+                    <li>STEP 1</li>
+                    <li class="active">STEP 2</li>
+                    <li>STEP 3</li>
+                </ol>
+                <h5 class="modal-title">사용자 정보 등록</h5>
+                <a href="#modal-user-certication" class="back" aria-label="뒤로" data-bs-toggle="modal"><i class="icon-back"></i></a>
+            </div>
+            <div class="modal-body pb-0">
+                <div class="form-error">
+                    <p>서비스 이용약관 및 개인정보 취금방침에 대한 동의는 필수입니다.</p>
+                </div>
+                <div class="mb-4">
+                    <label for="userMobile" class="form-label">휴대폰 번호(계정 ID)</label>
+                    <input type="text" class="form-control" id="userMobile" placeholder="01012345678">
+                </div>
+                <div class="row gx-5 mb-4">
+                    <div class="col">
+                        <label for="userName" class="form-label">성명<strong class="required">필수입력</strong></label>
+                        <input type="text" class="form-control" id="userName">
+                    </div>
+                    <div class="col">
+                        <label for="userPosition" class="form-label">직급</label>
+                        <input type="text" class="form-control" id="userPosition" placeholder="대표(마스터)">
+                    </div>
+                </div>
+                <div class="row gx-5 mb-5">
+                    <div class="col">
+                        <label for="userPw" class="form-label">비밀번호<strong class="required">필수입력</strong></label>
+                        <input type="password" class="form-control" id="userPw">
+                    </div>
+                    <div class="col">
+                        <label for="userPwRe" class="form-label">비밀번호 확인<strong class="required">필수입력</strong></label>
+                        <input type="password" class="form-control" id="userPwRe">
+                    </div>
+                </div>
+                <div class="bg-in-modal mx-n5">
+                    <div class="agree fw-medium">
+                        <div class="row align-items-center agree-top">
+                            <div class="col">
+                                <label for="agreeAll"><strong>모두 동의합니다.</strong></label>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-check-lg form-check-circle">
+                                    <input class="form-check-input" type="checkbox" id="agreeAll">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4">
+                            <div class="col-auto text-primary">필수</div>
+                            <div class="col">
+                                <a href="javascript:;" class="d-flex align-items-center">서비스 이용약관<i class="icon-link-arrow ms-3"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-check-lg form-check-circle">
+                                    <input class="form-check-input" type="checkbox" id="agree1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4">
+                            <div class="col-auto text-primary">필수</div>
+                            <div class="col">
+                                <a href="javascript:;" class="d-flex align-items-center">개인정보 취급방침<i class="icon-link-arrow ms-3"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-check-lg form-check-circle">
+                                    <input class="form-check-input" type="checkbox" id="agree2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4">
+                            <div class="col-auto">선택</div>
+                            <div class="col">
+                                <a href="javascript:;" class="d-flex align-items-center">마케팅 수신 동의<i class="icon-link-arrow ms-3"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-check-lg form-check-circle">
+                                    <input class="form-check-input" type="checkbox" id="agree3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modal-supplier-input">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal : 새로운 계정 등록 - 공급사 정보 등록 -->
+<div class="modal" id="modal-supplier-input" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ol class="pager">
+                    <li>STEP 1</li>
+                    <li>STEP 2</li>
+                    <li class="active">STEP 3</li>
+                </ol>
+                <h5 class="modal-title">공급사 정보 등록</h5>
+                <a href="#modal-user-info-input" class="back" aria-label="뒤로" data-bs-toggle="modal"><i class="icon-back"></i></a>
+            </div>
+            <div class="modal-body">
+                <div class="form-error">
+                    <p>사업자등록증이 유효하지 않은 파일 형식입니다.</p>
+                    <!-- <p>이미 가입된 사업자 등록 번호입니다.</p> -->
+                </div>
+                <div class="mb-4">
+                    <label for="businessDoc" class="form-label">사업자 등록증<strong class="required">필수입력</strong></label>
+                    <div class="row gx-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control pe-7" id="businessDoc" placeholder="JPG, PNG, JPEG, PDF 가능">
+                                <button type="button" aria-label="파일삭제" class="file-delete"><i class="icon-file-delete"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-primary">파일 선택</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="row align-items-center mb-2">
+                        <div class="col">
+                            <label for="businessNum" class="form-label mb-0">사업자 등록 번호<strong class="required">필수입력</strong></label>
+                        </div>
+                        <div class="col-auto">
+                            <p class="valid-feedback mt-0" id="numValidation">
+                                <i class="icon-validation-success me-1"></i>등록 가능한 사업자 등록 번호입니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="col">
+                            <div class="row align-items-center gx-2">
+                                <div class="col-auto">
+                                    <input type="tel" class="form-control" id="businessNum" style="width:90px">
+                                </div>
+                                <div class="col-auto">-</div>
+                                <div class="col-auto">
+                                    <input type="tel" class="form-control" title="사업자등록번호 가운데자리" style="width: 75px">
+                                </div>
+                                <div class="col-auto">-</div>
+                                <div class="col">
+                                    <input type="tel" class="form-control" title="사업자등록번호 끝자리">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-primary" id="btnMumCertification">등록 확인</button>
+                            <script>
+                                $('#btnMumCertification').on('click', function() {
+                                    $('#numValidation').show();
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-5 mb-4">
+                    <div class="col">
+                        <label for="supplierCeo" class="form-label">대표자 명</label>
+                        <input type="text" class="form-control" id="supplierCeo">
+                    </div>
+                    <div class="col">
+                        <label for="supplierName" class="form-label">법인명(상호)<strong class="required">필수입력</strong></label>
+                        <input type="text" class="form-control" id="supplierName">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="supplierAddr" class="form-label">사업장 주소<strong class="required">필수입력</strong></label>
+                    <div class="row gx-3 mb-4">
+                        <div class="col">
+                            <input type="text" class="form-control" id="supplierAddr">
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-primary">주소 검색</button>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" title="사업장 상세 주소">
+                </div>
+                <div class="row gx-5">
+                    <div class="col">
+                        <label for="supplierTel" class="form-label">전화번호</label>
+                        <input type="tel" class="form-control" id="supplierTel">
+                    </div>
+                    <div class="col">
+                        <label for="supplierFax" class="form-label">FAX</label>
+                        <input type="tel" class="form-control" id="supplierFax">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#alert-user-added">등록완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- alert : 새로운 계정 등록 완료 -->
+<div class="modal" id="alert-user-added" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert-message">
+                    <strong class="text-primary">토마토물산</strong> <br>
+                    새로운 계정 등록이 완료되었습니다.
+                </div>
+            </div>
+            <div class="modal-footer border-top-0">
+                <div class="row gx-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
