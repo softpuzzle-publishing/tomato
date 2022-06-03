@@ -87,6 +87,7 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
+  "white":       $white,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -689,8 +690,8 @@ $mark-bg:                     #fcf8e3 !default;
 // Customizes the `.table` component with basic values, each used across all table variations.
 
 // scss-docs-start table-variables
-$table-cell-padding-y:        .5rem !default;
-$table-cell-padding-x:        .5rem !default;
+$table-cell-padding-y:        .55rem !default;
+$table-cell-padding-x:        .75rem !default;
 $table-cell-padding-y-sm:     .25rem !default;
 $table-cell-padding-x-sm:     .25rem !default;
 
@@ -703,7 +704,7 @@ $table-accent-bg:             transparent !default;
 $table-th-font-weight:        null !default;
 
 $table-striped-color:         $table-color !default;
-$table-striped-bg-factor:     .05 !default;
+$table-striped-bg-factor:     .03 !default;
 $table-striped-bg:            rgba($black, $table-striped-bg-factor) !default;
 
 $table-active-color:          $table-color !default;
@@ -718,7 +719,7 @@ $table-border-factor:         .1 !default;
 $table-border-width:          $border-width !default;
 $table-border-color:          $border-color !default;
 
-$table-striped-order:         odd !default;
+$table-striped-order:         even !default;
 
 $table-group-separator-color: currentColor !default;
 
@@ -764,10 +765,12 @@ $input-btn-focus-box-shadow:   none !default;
 $input-btn-padding-y-sm:      .45rem !default;
 $input-btn-padding-x-sm:      .5rem !default;
 $input-btn-font-size-sm:      $font-size-sm !default;
+$input-btn-line-height-sm:    1.2857 !default;
 
 $input-btn-padding-y-lg:      .5rem !default;
 $input-btn-padding-x-lg:      1rem !default;
 $input-btn-font-size-lg:      $font-size-lg !default;
+$input-btn-line-height-lg:    $input-btn-line-height !default;
 
 $input-btn-border-width:      $border-width !default;
 // scss-docs-end input-btn-variables
@@ -788,10 +791,12 @@ $btn-white-space:             null !default; // Set to `nowrap` to prevent text 
 $btn-padding-y-sm:            $input-btn-padding-y-sm !default;
 $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
 $btn-font-size-sm:            $input-btn-font-size-sm !default;
+$btn-line-height-sm:          $input-btn-line-height-sm !default;
 
 $btn-padding-y-lg:            $input-btn-padding-y-lg !default;
 $btn-padding-x-lg:            $input-btn-padding-x-lg !default;
 $btn-font-size-lg:            $input-btn-font-size-lg !default;
+$btn-line-height-lg:          $input-btn-line-height-lg !default;
 
 $btn-border-width:            $input-btn-border-width !default;
 
@@ -853,10 +858,12 @@ $input-line-height:                     $input-btn-line-height !default;
 $input-padding-y-sm:                    $input-btn-padding-y-sm !default;
 $input-padding-x-sm:                    $input-btn-padding-x-sm !default;
 $input-font-size-sm:                    $input-btn-font-size-sm !default;
+$input-line-height-sm:                  $input-btn-line-height-sm !default;
 
 $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
+$input-line-height-lg:                  $input-btn-line-height-lg !default;
 
 $input-bg:                              #f2f4fa !default;
 $input-disabled-bg:                     $gray-200 !default;
@@ -961,7 +968,7 @@ $form-select-padding-y:             $input-padding-y !default;
 $form-select-padding-x:             $input-padding-x !default;
 $form-select-font-family:           $input-font-family !default;
 $form-select-font-size:             $input-font-size !default;
-$form-select-indicator-padding:     $form-select-padding-x * 2 + .0125rem !default; // Extra padding for background-image
+$form-select-indicator-padding:     $form-select-padding-x * 2 + 1rem !default; // Extra padding for background-image
 $form-select-font-weight:           $input-font-weight !default;
 $form-select-line-height:           $input-line-height !default;
 $form-select-color:                 $input-color !default;
@@ -992,11 +999,13 @@ $form-select-padding-y-sm:        $input-padding-y-sm !default;
 $form-select-padding-x-sm:        $input-padding-x-sm !default;
 $form-select-font-size-sm:        $input-font-size-sm !default;
 $form-select-border-radius-sm:    $input-border-radius-sm !default;
+$form-select-line-height-sm:      $input-line-height-sm !default;
 
 $form-select-padding-y-lg:        $input-padding-y-lg !default;
 $form-select-padding-x-lg:        $input-padding-x-lg !default;
 $form-select-font-size-lg:        $input-font-size-lg !default;
 $form-select-border-radius-lg:    $input-border-radius-lg !default;
+$form-select-line-height-lg:      $input-line-height-lg !default;
 
 $form-select-transition:          $input-transition !default;
 // scss-docs-end form-select-variables

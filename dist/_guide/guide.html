@@ -132,16 +132,29 @@
                     <button type="button" class="btn btn-outline-primary px-6">조회(좌우여백추가)</button>
                     <button type="button" class="btn btn-primary px-6">확인(좌우여백추가)</button>
                 </div>
+                <div style="background: #ebedf3;padding: .25rem">
+                    <button type="button" class="btn btn-white btn-sm" style="width: 96px"><i class="icon-plus me-2"></i>추가</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 96px"><i class="icon-plus me-2"></i>추가</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm"><i class="icon-image me-2"></i>상품 이미지 변경</button>
+                </div>
             </div>
         </section>
-
         <section>
-            <h1>Form</h1>
+            <h1>Form - input & select</h1>
             <div>
                 <div><input type="text" class="form-control" placeholder="placeholder"></div>
                 <div><input type="text" class="form-control" placeholder="placeholder" value="value"></div>
                 <div><input type="text" class="form-control" placeholder="placeholder" disabled></div>
                 <div><input type="text" class="form-control" placeholder="placeholder" value="Disabled readonly" disabled readonly></div>
+                <div>
+                    <input type="tel" class="form-control with-icon-mobile" placeholder="휴대폰 연락처" title="휴대폰 연락처">
+                    <input type="password" class="form-control with-icon-lock" placeholder="비밀번호" title="비밀번호">
+                    <input type="text" class="form-control with-icon-search" placeholder="검색어 입력">
+                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택">
+                </div>
                 <div class="mb-2">
                     <select class="form-select" aria-label="Default select">
                         <option selected>선택하세요</option>
@@ -158,6 +171,11 @@
                         <option value="3">Three</option>
                     </select>
                 </div>
+            </div>
+        </section>
+        <section>
+            <h1>Form - radio & checkbox</h1>
+            <div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

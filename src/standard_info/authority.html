@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+        <div id="container">
+            @@include('@@webRoot/_include/_aside.html')
+            <main id="main">
+
+                @@include('@@webRoot/_include/_lnb.html')
+
+                <!-- 실컨텐츠 -->
+                <h1 class="visually-hidden">권한 관리</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <div class="filter">
+                    <div class="filter-top">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="filter-title">상세 조회</div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-secondary btn-sm px-4"><i class="icon-refrash me-2"></i>초기화</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-body">
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+                                <div class="row align-items-center gx-3">
+                                    <div class="col-auto">
+                                        <select class="form-select" aria-label="담당 업무 선택">
+                                            <option selected>담당 업무 전체</option>
+                                            <option value="">전체</option>
+                                            <option value="">마스터(관리자)</option>
+                                            <option value="">영업</option>
+                                            <option value="">물류</option>
+                                            <option value="">관리</option>
+                                            <option value="">판매</option>
+                                            <option value="">연구원</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="row gx-3">
+                                    <div class="col-auto">
+                                        <select class="form-select" aria-label="검색 범위 선택">
+                                            <option selected>검색 전체</option>
+                                            <option value="">이름</option>
+                                            <option value="">직급</option>
+                                            <option value="">연락처</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control with-icon-search" placeholder="검색어 입력">
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box mt-5">
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="list-aside">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">등록된 사용자 <span class="fw-normal">(24)</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-area">
+                                    <table class="table table-striped">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th class="text-center">순서</th>
+                                                <th class="text-center">성명</th>
+                                                <th class="text-center">휴대폰 연락처(ID)</th>
+                                                <th class="text-end">담당업무</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">이호웅</td>
+                                                <td class="text-center">010-1234-5678</td>
+                                                <td class="text-end">마스터(관리자)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">이호웅</td>
+                                                <td class="text-center">010-1234-5678</td>
+                                                <td class="text-end">영업</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- //실컨텐츠 -->
+
+            </main> <!-- main -->
+        </div>
+    </div>
+    @@include('@@webRoot/_include/_modal.html')
+</body>
+
+</html>

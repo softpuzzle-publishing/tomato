@@ -15,20 +15,6 @@ textarea{ resize: none;}
 
 a{text-decoration: none;}
 
-// icons
-[class^=icon-]{display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;}
-.icon-user{width: 14px;height: 16px; background-image: url('../images/icon-user.svg');}
-.icon-house{width: 22px;height: 23px; background-image: url('../images/icon-house.svg');}
-.icon-list-check{width: 24px;height: 23px; background-image: url('../images/icon-list-check.svg');}
-.icon-file{width: 22px;height: 25px; background-image: url('../images/icon-file.svg');}
-.icon-database-coin{width: 27px;height: 27px; background-image: url('../images/icon-database-coin.svg');}
-.icon-file-money{width: 22px;height: 25px; background-image: url('../images/icon-file-money.svg');}
-.icon-mobile{width: 24px;height: 28px; background-image: url('../images/icon-mobile.svg');}
-.icon-back{width: 10px;height: 18px; background-image: url('../images/icon-back.svg');}
-.icon-link-arrow{width: 6px;height: 12px; background-image: url('../images/icon-link-arrow.svg');}
-.icon-file-delete{width: 18px;height: 18px; background-image: url('../images/icon-file-delete.svg');}
-.icon-validation-success{width: 10px;height: 8px; background-image: url('../images/icon-validation-success.svg');}
-
 // circle checkbox
 .form-check{
     &.form-check-circle{
@@ -53,11 +39,19 @@ a{text-decoration: none;}
     .btn-check:not(:checked) + .btn{background: $input-bg;border-color: $input-bg;color: #a0a0a0;}
 }
 
+.btn-outline-secondary{
+    border-color: #a0a0a0;
+    &:active,
+    &:hover{
+        background-color: #a0a0a0;border-color: #a0a0a0;
+    }
+}
+
 .list-group-card-type{
     .list-group-item{
         border-radius: .375rem;border: 0;border: 2px solid #fff;transition: all .15s;
         & + .list-group-item{margin-top: .75rem;}
-        &:hover{background-color: tint-color($primary, 95%);border-color:  tint-color($primary, 95%);}
+        &:hover{border-color:  tint-color($primary, 65%);background: #fff;}
         &.active{
             border-width: 2px;border-color: $primary;
             background-color: tint-color($primary, 90%);
@@ -111,4 +105,32 @@ strong.required{
 
 .position-relative{
     .file-delete{position: absolute;right: 1rem;top: 50%;transform: translateY(-50%)}
+}
+
+.filter{
+    background: #fff;overflow: hidden;border-radius: 12px;padding: 0 1.5rem;
+    .filter-top{
+        padding: .75rem 0;border-bottom: 1px solid #EBEDF3;
+    }
+    .filter-body{
+        padding: .75rem 0;
+    }
+    .filter-title{font-size: 18px;font-weight: 700;}
+}
+
+.box{
+    background: #fff;overflow: hidden;border-radius: 12px;padding: 1rem 1.5rem;
+}
+
+.table-top{margin-bottom: 1.25rem;}
+
+.table-title{font-size: 24px;line-height: 1.25;font-weight: 700;}
+
+.table-striped{
+    border-bottom-width: 0;
+}
+
+thead.table-dark{
+    th:first-child{border-radius: 6px 0 0 6px;}
+    th:last-child{border-radius: 0 6px 6px 0;}
 }

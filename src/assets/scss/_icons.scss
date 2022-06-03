@@ -1,0 +1,50 @@
+[class^=icon-]{display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;}
+.icon-user{width: 14px;height: 16px; background-image: url('../images/icon-user.svg');}
+.icon-house{width: 22px;height: 23px; background-image: url('../images/icon-house.svg');}
+.icon-list-check{width: 24px;height: 23px; background-image: url('../images/icon-list-check.svg');}
+.icon-file{width: 22px;height: 25px; background-image: url('../images/icon-file.svg');}
+.icon-database-coin{width: 27px;height: 27px; background-image: url('../images/icon-database-coin.svg');}
+.icon-file-money{width: 22px;height: 25px; background-image: url('../images/icon-file-money.svg');}
+.icon-mobile{width: 24px;height: 28px; background-image: url('../images/icon-mobile.svg');}
+.icon-back{width: 10px;height: 18px; background-image: url('../images/icon-back.svg');}
+.icon-link-arrow{width: 6px;height: 12px; background-image: url('../images/icon-link-arrow.svg');}
+.icon-file-delete{width: 18px;height: 18px; background-image: url('../images/icon-file-delete.svg');}
+.icon-validation-success{width: 10px;height: 8px; background-image: url('../images/icon-validation-success.svg');}
+.icon-refrash{width: 17px;height: 14px; background-image: url('../images/icon-refrash.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-refrash-white.svg');
+    }
+}
+.icon-plus{width: 16px;height: 16px; background-image: url('../images/icon-plus.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-plus-white.svg');
+    }
+}
+.icon-calendar{width: 18px;height: 18px; background-image: url('../images/icon-calendar.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-calendar-white.svg');
+    }
+}
+.icon-download{width: 20px;height: 20px; background-image: url('../images/icon-download.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-download-white.svg');
+    }
+}
+.icon-image{width: 18px;height: 18px; background-image: url('../images/icon-image.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-image-white.svg');
+    }
+}
+.icon-noimage{width: 47px;height: 47px; background-image: url('../images/icon-noimage.svg');}
+
+// icon in input
+.with-icon-mobile{background: $input-bg url('../images/icon-mobile.svg') no-repeat 1rem 50%;padding-left: 52px;}
+.with-icon-lock{background: $input-bg url('../images/icon-lock.svg') no-repeat 1rem 50%;padding-left: 52px;}
+.with-icon-certification{background: $input-bg url('../images/icon-certification.svg') no-repeat 13px 50%;padding-left: 52px;}
+.with-icon-search{background: $input-bg url('../images/icon-search.svg') no-repeat 1rem 50%;padding-left: 48px;}
+.with-icon-calendar{background: $input-bg url('../images/icon-calendar.svg') no-repeat 1rem 50%;padding-left: 48px;}
