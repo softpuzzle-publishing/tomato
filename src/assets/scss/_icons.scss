@@ -40,6 +40,13 @@
         background-image: url('../images/icon-image-white.svg');
     }
 }
+.icon-memo{width: 18px;height: 18px; background-image: url('../images/icon-memo.svg');
+    *:not(.btn-white).active > &,
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-memo-white.svg');
+    }
+}
 .icon-noimage{width: 47px;height: 47px; background-image: url('../images/icon-noimage.svg');}
 
 // icon in input
@@ -48,3 +55,7 @@
 .with-icon-certification{background: $input-bg url('../images/icon-certification.svg') no-repeat 13px 50%;padding-left: 52px;}
 .with-icon-search{background: $input-bg url('../images/icon-search.svg') no-repeat 1rem 50%;padding-left: 48px;}
 .with-icon-calendar{background: $input-bg url('../images/icon-calendar.svg') no-repeat 1rem 50%;padding-left: 48px;}
+
+.icon-arrow-right{width: 8px;height: 14px;background-image: url('../images/icon-arrow-right.svg');}
+
+.icon-bar{width: 1px;height: 14px;background: #D9D9D9;}

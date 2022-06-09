@@ -17,98 +17,309 @@
 
                 <!-- 실컨텐츠 -->
                 <h1 class="visually-hidden">권한 관리</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
-                <div class="filter">
-                    <div class="filter-top">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <div class="filter-title">상세 조회</div>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-secondary btn-sm px-4"><i class="icon-refrash me-2"></i>초기화</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter-body">
-                        <div class="row justify-content-between">
-                            <div class="col-auto">
-                                <div class="row align-items-center gx-3">
+                <div class="content-wrapper">
+                    <div class="content-header">
+                        <div class="filter">
+                            <div class="filter-top">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <div class="filter-title">상세 조회</div>
+                                    </div>
                                     <div class="col-auto">
-                                        <select class="form-select" aria-label="담당 업무 선택">
-                                            <option selected>담당 업무 전체</option>
-                                            <option value="">전체</option>
-                                            <option value="">마스터(관리자)</option>
-                                            <option value="">영업</option>
-                                            <option value="">물류</option>
-                                            <option value="">관리</option>
-                                            <option value="">판매</option>
-                                            <option value="">연구원</option>
-                                        </select>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <div class="row gx-3">
+                            <div class="filter-body">
+                                <div class="row justify-content-between">
                                     <div class="col-auto">
-                                        <select class="form-select" aria-label="검색 범위 선택">
-                                            <option selected>검색 전체</option>
-                                            <option value="">이름</option>
-                                            <option value="">직급</option>
-                                            <option value="">연락처</option>
-                                        </select>
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="담당 업무 선택">
+                                                    <option selected>담당 업무 전체</option>
+                                                    <option value="">전체</option>
+                                                    <option value="">마스터(관리자)</option>
+                                                    <option value="">영업</option>
+                                                    <option value="">물류</option>
+                                                    <option value="">관리</option>
+                                                    <option value="">판매</option>
+                                                    <option value="">연구원</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-auto">
-                                        <input type="text" class="form-control with-icon-search" placeholder="검색어 입력">
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box mt-5">
-                    <div class="row">
-                        <div class="col-auto">
-                            <div class="list-aside">
-                                <div class="table-top">
-                                    <div class="row align-items-center justify-content-between">
-                                        <div class="col-auto">
-                                            <div class="table-title">등록된 사용자 <span class="fw-normal">(24)</span></div>
+                                        <div class="row gx-3">
+                                            <div class="col-auto">
+                                                <div class="form-set">
+                                                    <select class="form-select w-auto" aria-label="검색 범위 선택">
+                                                        <option selected>전체</option>
+                                                        <option value="">이름</option>
+                                                        <option value="">직급</option>
+                                                        <option value="">연락처</option>
+                                                    </select>
+                                                    <input type="text" class="form-control with-icon-search" placeholder="검색어 입력" style="width: 320px">
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="table-area">
-                                    <table class="table table-striped">
-                                        <thead class="table-dark">
-                                            <tr>
-                                                <th class="text-center">순서</th>
-                                                <th class="text-center">성명</th>
-                                                <th class="text-center">휴대폰 연락처(ID)</th>
-                                                <th class="text-end">담당업무</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="text-center">이호웅</td>
-                                                <td class="text-center">010-1234-5678</td>
-                                                <td class="text-end">마스터(관리자)</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">이호웅</td>
-                                                <td class="text-center">010-1234-5678</td>
-                                                <td class="text-end">영업</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
-                        <div class="col">
-
+                    </div>
+                    <div class="content-body">
+                        <div class="box">
+                            <div class="row h-100">
+                                <div class="col-4">
+                                    <div class="table-wrap">
+                                        <div class="table-top">
+                                            <div class="row align-items-center justify-content-between">
+                                                <div class="col-auto">
+                                                    <div class="table-title">등록된 사용자 <span class="fw-normal">(24)</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-body">
+                                            <!-- data empty -->
+                                            <!-- <div class="d-flex h-100 align-items-center justify-content-center">
+                                                <p class="data-empty">등록된 공급사 목록이 존재하지 않습니다.</p>
+                                            </div> -->
+                                            <table class="table table-striped">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th class="text-center">순서</th>
+                                                        <th class="text-center">성명</th>
+                                                        <th class="text-center">휴대폰 연락처(ID)</th>
+                                                        <th class="text-end">담당업무</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td class="text-center">이호웅</td>
+                                                        <td class="text-center">010-1234-5678</td>
+                                                        <td class="text-end">마스터(관리자)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-center">이호웅</td>
+                                                        <td class="text-center">010-1234-5678</td>
+                                                        <td class="text-end">영업</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="table-wrap">
+                                        <div class="table-top">
+                                            <div class="row align-items-center justify-content-between">
+                                                <div class="col-auto">
+                                                    <div class="table-title">사용자 권한</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-body">
+                                            <div class="frame">
+                                                <!-- <div class="d-flex h-100 align-items-center justify-content-center">
+                                                    <p class="data-empty">등록된 사용자에서 대상을 선택해주세요.</p>
+                                                </div> -->
+                                                <div class="overflow-y-auto">
+                                                    <table class="table table-borderless table-fixed table-user-auth">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center" style="width: 30%">분류</th>
+                                                                <th class="text-center">조회</th>
+                                                                <th class="text-center">신규</th>
+                                                                <th class="text-center">변경/저장</th>
+                                                                <th class="text-center">삭제</th>
+                                                                <th class="text-center">다운로드(Excel)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="6" class="p-0">
+                                                                    <div class="collapsed-switch-item">
+                                                                        <table class="table table-borderless table-fixed">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="toggler text-start" style="width: 30%">
+                                                                                        <a href="javascript:;"><i class="icon-arrow-right me-4"></i>기준 정보</a>
+                                                                                    </td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-switch form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" role="switch">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 공급사 정보 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 사용자 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 권한 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 고객사 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 상품 정보 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="collapsed-switch-item">
+                                                                        <table class="table table-borderless table-fixed">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="toggler text-start" style="width: 30%">
+                                                                                        <a href="javascript:;"><i class="icon-arrow-right me-4"></i>주문 관리</a>
+                                                                                    </td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-switch form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" role="switch">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 공급사 정보 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="collapsed-switch-item">
+                                                                        <table class="table table-borderless table-fixed">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="toggler text-start" style="width: 30%">
+                                                                                        <a href="javascript:;"><i class="icon-arrow-right me-4"></i>매출 관리</a>
+                                                                                    </td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-switch form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" role="switch">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 공급사 정보 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="collapsed-switch-item">
+                                                                        <table class="table table-borderless table-fixed">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="toggler text-start" style="width: 30%">
+                                                                                        <a href="javascript:;"><i class="icon-arrow-right me-4"></i>정산 관리</a>
+                                                                                    </td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-switch form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" role="switch">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                                <tr class="tr-collapsed">
+                                                                                    <td class="text-start">- 공급사 정보 관리</td>
+                                                                                    @@for(var i = 5; i > 0; i--){
+                                                                                    <td class="text-center">
+                                                                                        <div class="form-check form-check-inline m-0">
+                                                                                            <input class="form-check-input" type="checkbox" value="">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    }
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <script>
+                                                        $('.table-user-auth .toggler').on('click', function(){
+                                                            $(this).closest('tr').toggleClass('expanded');
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-bottom">
+                                            <div class="row justify-content-between">
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-primary">변경 완료</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

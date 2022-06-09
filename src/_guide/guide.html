@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+    <title>(guide)TOMATO B2B</title>
     @@include('@@webRoot/_include/_head.html')
     <style>
         body{background: #fff;padding: 1rem 0 2rem;}
@@ -33,35 +34,22 @@
             </div>
         </section>
         <section>
-            <h1>아이콘</h1>
+            <h1>badge</h1>
             <div>
-                <i class="icon-home"></i>
+                <span class="badge bg-primary">primary</span>
+                <span class="badge bg-secondary">secondary</span>
+                <span class="badge bg-success">사용 가능</span>
+                <span class="badge bg-danger">사용 불가</span>
             </div>
         </section>
         <section>
-            <h1>pagination</h1>
+            <h1></h1>
+            <div></div>
+        </section>
+        <section>
+            <h1>아이콘</h1>
             <div>
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="icon-paging-first"></i></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="icon-paging-prev"></i></a>
-                        </li>
-                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="icon-paging-next"></i></a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="icon-paging-end"></i></a>
-                        </li>
-                    </ul>
-                </nav>
+                <i class="icon-home"></i>
             </div>
         </section>
         <section>
@@ -95,6 +83,9 @@
                     <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
                     <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
                     <button type="button" class="btn btn-outline-secondary btn-sm"><i class="icon-image me-2"></i>상품 이미지 변경</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-primary btn-sm"><i class="icon-memo me-2"></i>메모 내용 보기</button>
                 </div>
             </div>
         </section>
@@ -259,42 +250,33 @@
             </div>
         </section>
         <section>
-            <h1>list group</h1>
-            <div style="background-color: #EBEDF3;padding: 1rem;">
-                <div class="list-group list-group-card-type">
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">서플라이어</h5>
-                            <div class="text-primary">2318731098152</div>
-                        </div>
-                        <div class="mb-1">217-15-39784</div>
-                        <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">푸드비투비</h5>
-                            <div class="text-primary">2318731098152</div>
-                        </div>
-                        <div class="mb-1">217-15-39784</div>
-                        <address class="text-secondary">서울특별시 강남구 역삼동 739-15 2층</address>
-                    </a>
-                </div>
-                <script>
-                    $('.list-group-item-action').on('click', function(e){
-                        e.preventDefault();
-                        $(this).siblings('.list-group-item-action').removeClass('active');
-                        $(this).addClass('active');
-                    })
-                </script>
-            </div>
-        </section>
-        <section>
-            <h1>badge</h1>
+            <h1>tooltip</h1>
             <div>
-                <span class="badge bg-primary">primary</span>
-                <span class="badge bg-secondary">secondary</span>
-                <span class="badge bg-success">사용 가능</span>
-                <span class="badge bg-danger">사용 불가</span>
+                <div class="position-relative">
+                    <button type="button" class="btn btn-outline-primary btn-xs btn-memo-view"><i class="icon-memo me-2"></i>메모 내용 보기</button>
+                    <script>
+                        $('.btn-memo-view').on('click', function () {
+                            $(this).toggleClass('active');
+                        });
+                    </script>
+                    <div class="memo-tooltip" style="position: static">
+                        <div class="row form-horizontal">
+                            <div class="col-auto">
+                                <label for="" class="w-auto">관리 메모</label>
+                            </div>
+                            <div class="col">
+                                <textarea rows="4" class="form-control form-control-sm">발주 확인</textarea>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end mt-3">
+                            <span class="text-secondary">작성자</span>
+                            <span class="ms-2">홍길동</span>
+                            <i class="icon-bar mx-3"></i>
+                            <span class="text-secondary">작성일</span>
+                            <span class="ms-2">2022-06-29 11:23:57</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

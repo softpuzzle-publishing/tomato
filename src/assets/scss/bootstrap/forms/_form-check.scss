@@ -37,7 +37,7 @@
     border-radius: $form-check-radio-border-radius;
   }
 
-  &:active {
+/*   &:active {
     filter: $form-check-input-active-filter;
   }
 
@@ -45,7 +45,7 @@
     border-color: $form-check-input-focus-border;
     outline: 0;
     box-shadow: $form-check-input-focus-box-shadow;
-  }
+  } */
 
   &:checked {
     background-color: $form-check-input-checked-bg-color;
@@ -112,15 +112,19 @@
     margin-left: $form-switch-padding-start * -1;
     background-image: escape-svg($form-switch-bg-image);
     background-position: left center;
+    border: 0;
     @include border-radius($form-switch-border-radius);
     @include transition($form-switch-transition);
+    background-image: escape-svg($form-switch-checked-bg-image);
+    background-color: #CFD4E1;
 
-    &:focus {
+   /*  &:focus {
       background-image: escape-svg($form-switch-focus-bg-image);
-    }
+    } */
 
     &:checked {
       background-position: $form-switch-checked-bg-position;
+      background-color: $form-check-input-checked-bg-color;
 
       @if $enable-gradients {
         background-image: escape-svg($form-switch-checked-bg-image), var(--#{$variable-prefix}gradient);

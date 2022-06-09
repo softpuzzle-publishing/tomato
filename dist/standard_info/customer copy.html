@@ -100,16 +100,168 @@
             </aside>
             <main id="main">
 
-                <div class="container-fluid">
-                    <nav class="lnb">
+                <nav class="lnb">
 
-                    </nav>
+                </nav>
 
-                    <!-- 실컨텐츠 -->
+                <!-- 실컨텐츠 -->
+                <h1 class="visually-hidden">고객사 관리</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <div class="content-wrapper">
+                    <div class="content-header">
+                        <div class="filter">
+                            <div class="filter-top">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <div class="filter-title">상세 조회</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto order-2">
+                                                <div class="position-relative">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm btn-date-range" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
+                                                    <div class="date-layer">
+                                                        <div class="date-layer-head">
+                                                            <div class="tit">시스템 연결일</div>
+                                                        </div>
+                                                        <div class="date-layer-body">
+                                                            <div class="row gx-3 align-items-center mb-5">
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택">
+                                                                </div>
+                                                                <div class="col-auto">~</div>
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row row-cols-2 g-3">
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange1">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange1">금일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange2">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange2">작일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange3">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange3">1주일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange4">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange4">1개월</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange5">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange5">3개월</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange6">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange6">6개월</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <script>
+                                                        $('.btn-date-range').on('click', function() {
+                                                            $(this).closest('.row').toggleClass('active');
+                                                        });
+                                                        $(document).on('mouseup', function(e) {
+                                                            e.preventDefault();
+                                                            if ($('.btn-date-range').has(e.target).length === 0 && $('.date-layer').has(e.target).length === 0) {
+                                                                $('.btn-date-range').closest('.row').removeClass('active');
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto order-1">
+                                                <div class="selected-date-range">
+                                                    <input type="text" class="form-control" value="시스템 연결일 : 2022-04-24 ~ 2022-05-23" readonly>
+                                                    <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-body">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="거래 상태 선택">
+                                                    <option selected>거래 상태 전체</option>
+                                                    <option value="">전체</option>
+                                                    <option value="">마스터(관리자)</option>
+                                                    <option value="">영업</option>
+                                                    <option value="">물류</option>
+                                                    <option value="">관리</option>
+                                                    <option value="">판매</option>
+                                                    <option value="">연구원</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="고객사 상태 선택">
+                                                    <option selected>고객사 상태 전체</option>
+                                                    <option value="">전체</option>
+                                                    <option value="">운영 중</option>
+                                                    <option value="">휴점</option>
+                                                    <option value="">오픈 준비</option>
+                                                    <option value="">테스트</option>
+                                                    <option value="">공사 중</option>
+                                                    <option value="">폐점 완료</option>
+                                                    <option value="">폐점 준비</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row gx-3">
+                                            <div class="col-auto">
+                                                <div class="form-set">
+                                                    <select class="form-select w-auto" aria-label="검색 범위 선택">
+                                                        <option selected>검색 전체</option>
+                                                        <option value="">고객사 코드</option>
+                                                        <option value="">고객사 명</option>
+                                                        <option value="">사업자 번호</option>
+                                                        <option value="">대표자 명</option>
+                                                    </select>
+                                                    <input type="text" class="form-control with-icon-search" placeholder="검색어 입력" style="width: 320px">
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <div class="box">
+                            <div class="table-wrap">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">등록된 고객사 <span class="fw-normal">(24)</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="#modal-customer-detail" data-bs-toggle="modal" class="me-3">고객사 상세 확인용</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- //실컨텐츠 -->
-
-                </div> <!-- container-fluid -->
+                <!-- //실컨텐츠 -->
 
             </main> <!-- main -->
         </div>
@@ -476,7 +628,6 @@
             </div>
         </div>
     </div>
-
     <!-- modal : 고객사 상세 -->
     <div class="modal" id="modal-customer-detail" tabindex="-1" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 1236px">
@@ -614,121 +765,6 @@
                                 </div>
                                 <div class="col-auto">
                                     <button type="button" class="btn btn-primary" style="width: 120px">변경 완료</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- modal : 상품 상세 -->
-    <div class="modal" id="modal-product-detail" tabindex="-1" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 960px">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                    <h5 class="modal-title">상품 상세 정보</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="form-horizontal row">
-                        <div class="col-auto">
-                            <div class="thumbs">
-                                <!-- 이미지 없을때 -->
-                                <i class="icon-noimage"></i>
-                                <!-- 이미지 있을떄 -->
-                                <!-- <img src="../assets/images/@product.jpeg" alt="" class="rounded"> -->
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row mb-2">
-                                <label for="" class="col-auto text-end">상품 명</label>
-                                <div class="col">
-                                    <input type="text" class="form-control form-control-sm" value="매운 블랙 신라면">
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <label for="" class="col-auto text-end">규격</label>
-                                <div class="col">
-                                    <input type="text" class="form-control form-control-sm" value="230g">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label for="" class="col-auto4 text-end">단위</label>
-                                <div class="col">
-                                    <input type="text" class="form-control form-control-sm" value="ea">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row mb-2">
-                                <label for="" class="col-auto text-end">상품 코드</label>
-                                <div class="col">
-                                    <input type="text" class="form-control form-control-sm" value="880 6533 742132">
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <label for="" class="col-auto text-end">입수</label>
-                                <div class="col">
-                                    <input type="text" class="form-control form-control-sm" value="236">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label for="" class="col-auto text-end">면과세 구분</label>
-                                <div class="col">
-                                    <input type="text" class="form-control form-control-sm" value="과세">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border-top mt-5 py-4">
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-secondary btn-sm"><i class="icon-image me-2"></i>상품 이미지 추가</button>
-                            </div>
-                            <div class="col">
-                                <div class="d-flex align-items-center justify-content-end">
-                                    <span class="text-secondary">작성자</span>
-                                    <span class="ms-2">홍길동</span>
-                                    <i class="icon-bar mx-3"></i>
-                                    <span class="text-secondary">작성일</span>
-                                    <span class="ms-2">2022-06-29 11:23:57</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-in-modal mx-n5">
-                        <div class="box">
-                            <div class="table-wrap">
-                                <div class="table-top">
-                                    <div class="row align-items-center justify-content-between">
-                                        <div class="col-auto">
-                                            <div class="table-title">고객사 입점 정보 <span class="fw-normal">(7)</span></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-body" style="height: 220px">
-                                    <div>테이블 영역</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="row gx-3 justify-content-between">
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
-                        </div>
-                        <div class="col-auto">
-                            <div class="row gx-3">
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">닫기</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-primary" style="width: 120px">저장</button>
                                 </div>
                             </div>
                         </div>

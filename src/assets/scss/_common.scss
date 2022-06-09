@@ -5,6 +5,9 @@ i{font-style: normal;}
 
 button{background: transparent;margin: 0;padding: 0;border: 0;border-radius: 0;font-size: 1em;line-height: 0;}
 
+dl,
+dt,
+dd,
 ul,
 ol,
 li{list-style: none;padding: 0;margin: 0;}
@@ -37,6 +40,17 @@ a{text-decoration: none;}
 
 .btn-group{
     .btn-check:not(:checked) + .btn{background: $input-bg;border-color: $input-bg;color: #a0a0a0;}
+    .btn-check:checked{
+        & + .btn{font-weight: 700;}
+        & + .btn-success{background: $success;border-color: $success;}
+        & + .btn-danger{background: $danger;border-color: $danger;}
+    }
+}
+
+.btn-check{
+    &:checked{
+        & + .btn-outline-secondary{background-color: $primary;border-color: $primary;}
+    }
 }
 
 .btn-outline-secondary{
@@ -71,10 +85,14 @@ a{text-decoration: none;}
     i{vertical-align: top;}
 }
 
-.modal-header{justify-content: center;border-bottom: 0;padding-top: 38px;padding-bottom: 0;
+.modal-header{
+    justify-content: center;border-bottom: 0;padding-top: 38px;padding-bottom: 0;
     .pager{position: absolute;left: 50%;top: 1rem;transform: translateX(-50%);}
     .back{position: absolute;left: 20px;top: 44px;}
-
+    &.bg-dark{
+        background-color: #43464C !important;padding-top: 17px;padding-bottom: 13px;
+        .modal-title{color: #fff;}
+    }
 }
 .modal-title{font-size: 24px;font-weight: 700;line-height: 1.25;}
 .modal-footer{
@@ -108,7 +126,7 @@ strong.required{
 }
 
 .filter{
-    background: #fff;overflow: hidden;border-radius: 12px;padding: 0 1.5rem;
+    background: #fff;border-radius: 12px;padding: 0 1.5rem;
     .filter-top{
         padding: .75rem 0;border-bottom: 1px solid #EBEDF3;
     }
@@ -118,19 +136,97 @@ strong.required{
     .filter-title{font-size: 18px;font-weight: 700;}
 }
 
-.box{
-    background: #fff;overflow: hidden;border-radius: 12px;padding: 1rem 1.5rem;
-}
+.table-fixed{table-layout: fixed;}
+.table-striped{border-bottom-width: 0;}
 
+.table-wrap{display: flex;flex-direction: column;height: 100%;}
 .table-top{margin-bottom: 1.25rem;}
+.table-body{flex-grow: 1;height: 1px;
+    .data-empty{font-size: 18px;font-weight: 500;color: #9C9FA9;}
+}
+.table-bottom{margin-top: 1rem;
+    &.has-border{border-top: 1px solid #EBEDF3;padding-top: 1rem;}
+}
 
 .table-title{font-size: 24px;line-height: 1.25;font-weight: 700;}
 
-.table-striped{
-    border-bottom-width: 0;
-}
 
 thead.table-dark{
     th:first-child{border-radius: 6px 0 0 6px;}
     th:last-child{border-radius: 0 6px 6px 0;}
+}
+
+.box{
+    background: #fff;border-radius: 12px;padding: 1.5rem;height: 100%;
+}
+
+.frame{
+    border: 1px solid #CFD4E1;height: 100%;border-radius: 12px;padding: 1rem 1.5rem;
+}
+
+.overflow-y-auto{
+    height: 100%;overflow: auto;overflow-x: hidden;
+}
+
+.form-check{
+    &.m-0{
+        padding-left: $form-check-input-width;
+        .form-check-input{float: none;margin-left: -$form-check-input-width;}
+    }
+    &.form-switch{
+        &.m-0{
+            padding-left: $form-switch-width;
+            .form-check-input{float: none;margin-left: -$form-switch-width;}
+        }
+    }
+}
+
+.form-set{
+    display: flex;align-items: center;
+    > [class^=form-]{
+        margin-left: 1px;margin-right: 1px;
+        &:first-child{border-radius: $form-select-border-radius 0 0 $form-select-border-radius;}
+        &:last-child{border-radius: 0 $form-select-border-radius $form-select-border-radius 0;}
+    }
+}
+
+//IB Sheet
+/* body{
+    .GridMain1 .GridMain2 .GMHeaderText{
+        background: #43464C;color: #fff;padding-top: 9px;padding-bottom: 9px;font-size: 14px;font-weight: 400;border-right-color: #000;border-left-color: #000;
+    }
+    .GridMain1 .GridMain2 .GMCell{
+        padding-top: 10px;padding-bottom: 10px;font-size: 14px;
+    }
+} */
+
+.selected-date-range{
+    position: relative;display: inline-block;vertical-align: middle;
+    .form-control{background: #DCE0EA;width: 315px;height: 32px;border-radius: 50rem;font-size: 14px;padding-left: 13px;padding-right: 28px;}
+    button{position: absolute;right: 6px;top: 50%;transform: translateY(-50%);}
+}
+
+.date-layer{
+    width: 420px;background: #FFFFFF;box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);border-radius: 6px;padding: 1.5rem;display: none;
+    position: absolute;right: 0;top: 44px;z-index: 99;
+    .tit{text-align: center;font-size: 18px;font-weight: 700;border-bottom: 1px solid #EBEDF3;padding-bottom: 18px;line-height: 1.2;margin-bottom: 1.5rem;}
+    .active &{
+        display: block;
+    }
+}
+
+.btn-date-range{
+    .active &{
+        background-color: #fff;border-color: $primary;color: $primary;
+        .icon-calendar{background-image: url('../images/icon-calendar-blue.svg');}
+    }
+}
+
+.form-horizontal{
+    label{width: 120px;margin-top: 7px;color: #A0A0A0;}
+}
+
+.thumbs{
+    background: #F2F4FA;border-radius: 6px;display: flex;align-items: center;justify-content: center; width: 140px;min-height: 124px;
+    img{object-fit: contain;}
 }
