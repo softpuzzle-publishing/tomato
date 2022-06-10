@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
 
     <!-- publilshing css -->
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -23,6 +24,8 @@
     <script src="../assets/lib/jquery/jquery.min.js"></script>
     <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
     <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="../assets/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js"></script>
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
 
     <!-- publishing js -->
@@ -83,11 +86,16 @@
                                 <span>주문 관리</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
+                        <li class="has-treeview">
+                            <a href="../sales_management/period.html">
                                 <i class="icon-database-coin"></i>
                                 <span>매출 관리</span>
                             </a>
+                            <ul>
+                                <li><a href="../sales_management/period.html"><span>기간별 매출 조회</span></a></li>
+                                <li><a href=""><span>재고 현황 및 발주 등록</span></a></li>
+                                <li><a href=""><span>매출액 및 재고 현황</span></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="">
@@ -1024,11 +1032,17 @@
                                 <div class="table-body" style="height: 220px">
                                     <div>테이블 영역</div>
                                     <div style="text-align: right">
-                                        <div class="position-relative">
+                                        <div class="position-relative d-inline-block">
                                             <button type="button" class="btn btn-outline-primary btn-xs btn-memo-view"><i class="icon-memo me-2"></i>메모 내용 보기</button>
                                             <script>
                                                 $('.btn-memo-view').on('click', function() {
                                                     $(this).toggleClass('active');
+                                                });
+                                                $(document).on('mouseup', function(e) {
+                                                    e.preventDefault();
+                                                    if ($('.btn-memo-view').has(e.target).length === 0 && $('.memo-tooltip').has(e.target).length === 0) {
+                                                        $('.btn-memo-view').removeClass('active');
+                                                    }
                                                 });
                                             </script>
                                             <div class="memo-tooltip">

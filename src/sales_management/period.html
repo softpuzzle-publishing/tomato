@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+        <div id="container">
+            @@include('@@webRoot/_include/_aside.html')
+            <main id="main">
+
+                @@include('@@webRoot/_include/_lnb.html')
+
+                <!-- 실컨텐츠 -->
+                <h1 class="visually-hidden">기간별 매출 조회</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <div class="content-wrapper">
+                    <div class="content-header">
+                        <div class="filter">
+                            <div class="filter-top">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <div class="filter-title">상세 조회</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto order-2">
+                                                <div class="position-relative">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm btn-date-range" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
+                                                    <div class="date-layer">
+                                                        <div class="date-layer-head">
+                                                            <ul class="nav nav-tabs nav-justified border-bottom-0" role="tablist">
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link tit active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">연별 조회</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link tit" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">월별 조회</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link tit" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">일자별 조회</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="date-layer-body pt-5">
+                                                            <div class="tab-content" id="myTabContent">
+                                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                                    <div class="row gx-3 align-items-center mb-5">
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000" title="날짜 선택" data-picker="year">
+                                                                        </div>
+                                                                        <div class="col-auto">~</div>
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000" title="날짜 선택" data-picker="year">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                                    <div class="row gx-3 align-items-center mb-5">
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
+                                                                        </div>
+                                                                        <div class="col-auto">~</div>
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                                    <div class="row gx-3 align-items-center mb-5">
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                                                                        </div>
+                                                                        <div class="col-auto">~</div>
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <script>
+                                                        $('.btn-date-range').on('click', function(){
+                                                            $(this).closest('.row').toggleClass('active');
+                                                        });
+                                                        $(document).on('mouseup', function (e) {
+                                                            e.preventDefault();
+                                                            if (
+                                                                $('.btn-date-range').has(e.target).length === 0 &&
+                                                                $('.date-layer').has(e.target).length === 0 &&
+                                                                $('.datepicker').has(e.target).length === 0
+                                                            ) {
+                                                                $('.btn-date-range').closest('.row').removeClass('active');
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto order-1">
+                                                <div class="selected-date-range">
+                                                    <span class="date">연별 조회 : 2021 ~ 2022</span>
+                                                    <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-body">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="고객사 기준 조회">
+                                                    <option selected>고객사 기준 조회</option>
+                                                    <option value="">상품 기준 조회</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row gx-3">
+                                            <div class="col-auto">
+                                                <div class="form-set">
+                                                    <select class="form-select w-auto" aria-label="검색 범위 선택">
+                                                        <option selected>검색 전체</option>
+                                                        <option value="">고객사 명</option>
+                                                        <option value="">상품</option>
+                                                        <option value="">분류</option>
+                                                    </select>
+                                                    <input type="text" class="form-control with-icon-search" placeholder="검색어 입력" style="width: 320px">
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <div class="box">
+                            <div class="table-wrap">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">고객사별 기간별 매출 조회 <span class="fw-normal">(24)</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="text-danger me-3">* 납품 완료 기준 데이터 (VAT 포함)</span>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-body">
+                                    <div style="text-align: center">
+                                        <a href="#modal-customer-detail" data-bs-toggle="modal" class="me-3">고객사 상세 확인용</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- //실컨텐츠 -->
+
+            </main> <!-- main -->
+        </div>
+    </div>
+    @@include('@@webRoot/_include/_modal.html')
+</body>
+
+</html>

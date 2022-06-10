@@ -16,6 +16,34 @@
 <body>
     <div class="container-fluid">
         <section>
+            <h1>datepicker</h1>
+            <div class="d-flex">
+                <div class="datepicker-inline-date me-3"></div>
+                <div class="datepicker-inline-month me-3"></div>
+                <div class="datepicker-inline-year me-3"></div>
+            </div>
+            <script>
+                $(".datepicker-inline-date").datepicker({
+                    todayBtn: true,
+                    autoclose: true,
+                });
+                $(".datepicker-inline-month").datepicker({
+                    todayBtn: true,
+                    autoclose: true,
+                    minViewMode: 1,
+                    maxViewMode: 1,
+                    format: "yyyy-mm",
+                });
+                $(".datepicker-inline-year").datepicker({
+                    todayBtn: true,
+                    autoclose: true,
+                    minViewMode: 2,
+                    maxViewMode: 2,
+                    format: "yyyy",
+                });
+            </script>
+        </section>
+        <section>
             <h1>Text</h1>
             <div>
                 <p>
@@ -100,7 +128,9 @@
                     <input type="tel" class="form-control with-icon-mobile" placeholder="휴대폰 연락처" title="휴대폰 연락처">
                     <input type="password" class="form-control with-icon-lock" placeholder="비밀번호" title="비밀번호">
                     <input type="text" class="form-control with-icon-search" placeholder="검색어 입력">
-                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택">
+                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                    <input type="text" class="form-control with-icon-calendar" placeholder="2022-04" title="월 선택" data-picker="month">
+                    <input type="text" class="form-control with-icon-calendar" placeholder="2022" title="연도 선택" data-picker="year">
                 </div>
                 <div class="mb-2">
                     <select class="form-select" aria-label="Default select">
@@ -252,18 +282,22 @@
         <section>
             <h1>tooltip</h1>
             <div>
-                <div class="position-relative">
+                <div class="d-inline-block position-relative">
                     <button type="button" class="btn btn-outline-primary btn-xs btn-memo-view"><i class="icon-memo me-2"></i>메모 내용 보기</button>
                     <script>
                         $('.btn-memo-view').on('click', function () {
                             $(this).toggleClass('active');
                         });
+                        $(document).on('mouseup', function (e) {
+                            e.preventDefault();
+                            if ($('.btn-memo-view').has(e.target).length === 0 && $('.memo-tooltip').has(e.target).length === 0) {
+                                $('.btn-memo-view').removeClass('active');
+                            }
+                        });
                     </script>
-                    <div class="memo-tooltip" style="position: static">
+                    <div class="memo-tooltip">
                         <div class="row form-horizontal">
-                            <div class="col-auto">
-                                <label for="" class="w-auto">관리 메모</label>
-                            </div>
+                            <label for="" class="col-auto w-auto">관리 메모</label>
                             <div class="col">
                                 <textarea rows="4" class="form-control form-control-sm">발주 확인</textarea>
                             </div>

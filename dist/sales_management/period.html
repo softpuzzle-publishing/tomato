@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-Compatible" content="IE=edge">
+    <title>TOMATO B2B</title>
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32">
+
+    <!-- library css -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- library js -->
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="../assets/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js"></script>
+    <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="../assets/js/ui.js" defer></script>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header id="header">
+            <div class="navbar navbar-expand">
+                <div class="container-fluid justify-content-end">
+                    <a class="navbar-brand" href="#"><img src="../assets/images/bi.svg" alt="TomaTo SUPPLY"></a>
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <select class="form-select">
+                                <option selected>토마토마마트 1호점</option>
+                            </select>
+                        </li>
+                        <li class="nav-item user-info">
+                            <a href="#none">
+                                <span class="user-type">토마토 사용자</span>
+                                <span class="user-profile">
+                                    <i class="icon-user"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <aside id="aside">
+                <nav class="sidebar">
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="">
+                                <i class="icon-house"></i>
+                                <span>홈</span>
+                            </a>
+                        </li>
+                        <li class="has-treeview">
+                            <a href="../standard_info/supplier.html">
+                                <i class="icon-list-check"></i>
+                                <span>기준 정보</span>
+                            </a>
+                            <ul>
+                                <li><a href="../standard_info/supplier.html"><span>공급사 정보 관리</span></a></li>
+                                <li><a href="../standard_info/user.html"><span>사용자 관리</span></a></li>
+                                <li><a href="../standard_info/authority.html"><span>권한 관리</span></a></li>
+                                <li><a href="../standard_info/customer.html"><span>고객사 관리</span></a></li>
+                                <li><a href="../standard_info/product.html"><span>상품 정보 관리</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="icon-file"></i>
+                                <span>주문 관리</span>
+                            </a>
+                        </li>
+                        <li class="has-treeview">
+                            <a href="../sales_management/period.html">
+                                <i class="icon-database-coin"></i>
+                                <span>매출 관리</span>
+                            </a>
+                            <ul>
+                                <li><a href="../sales_management/period.html"><span>기간별 매출 조회</span></a></li>
+                                <li><a href=""><span>재고 현황 및 발주 등록</span></a></li>
+                                <li><a href=""><span>매출액 및 재고 현황</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="icon-file-money"></i>
+                                <span>정산 관리</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <main id="main">
+
+                <nav class="lnb">
+
+                </nav>
+
+                <!-- 실컨텐츠 -->
+                <h1 class="visually-hidden">기간별 매출 조회</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <div class="content-wrapper">
+                    <div class="content-header">
+                        <div class="filter">
+                            <div class="filter-top">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <div class="filter-title">상세 조회</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto order-2">
+                                                <div class="position-relative">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm btn-date-range" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
+                                                    <div class="date-layer">
+                                                        <div class="date-layer-head">
+                                                            <ul class="nav nav-tabs nav-justified border-bottom-0" role="tablist">
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link tit active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">연별 조회</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link tit" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">월별 조회</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link tit" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">일자별 조회</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="date-layer-body pt-5">
+                                                            <div class="tab-content" id="myTabContent">
+                                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                                    <div class="row gx-3 align-items-center mb-5">
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000" title="날짜 선택" data-picker="year">
+                                                                        </div>
+                                                                        <div class="col-auto">~</div>
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000" title="날짜 선택" data-picker="year">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                                    <div class="row gx-3 align-items-center mb-5">
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
+                                                                        </div>
+                                                                        <div class="col-auto">~</div>
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                                    <div class="row gx-3 align-items-center mb-5">
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                                                                        </div>
+                                                                        <div class="col-auto">~</div>
+                                                                        <div class="col">
+                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <script>
+                                                        $('.btn-date-range').on('click', function() {
+                                                            $(this).closest('.row').toggleClass('active');
+                                                        });
+                                                        $(document).on('mouseup', function(e) {
+                                                            e.preventDefault();
+                                                            if (
+                                                                $('.btn-date-range').has(e.target).length === 0 &&
+                                                                $('.date-layer').has(e.target).length === 0 &&
+                                                                $('.datepicker').has(e.target).length === 0
+                                                            ) {
+                                                                $('.btn-date-range').closest('.row').removeClass('active');
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto order-1">
+                                                <div class="selected-date-range">
+                                                    <span class="date">연별 조회 : 2021 ~ 2022</span>
+                                                    <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-body">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="고객사 기준 조회">
+                                                    <option selected>고객사 기준 조회</option>
+                                                    <option value="">상품 기준 조회</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row gx-3">
+                                            <div class="col-auto">
+                                                <div class="form-set">
+                                                    <select class="form-select w-auto" aria-label="검색 범위 선택">
+                                                        <option selected>검색 전체</option>
+                                                        <option value="">고객사 명</option>
+                                                        <option value="">상품</option>
+                                                        <option value="">분류</option>
+                                                    </select>
+                                                    <input type="text" class="form-control with-icon-search" placeholder="검색어 입력" style="width: 320px">
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <div class="box">
+                            <div class="table-wrap">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">고객사별 기간별 매출 조회 <span class="fw-normal">(24)</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="text-danger me-3">* 납품 완료 기준 데이터 (VAT 포함)</span>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-body">
+                                    <div style="text-align: center">
+                                        <a href="#modal-customer-detail" data-bs-toggle="modal" class="me-3">고객사 상세 확인용</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- //실컨텐츠 -->
+
+            </main> <!-- main -->
+        </div>
+    </div>
+    <!-- alert : 변경사항 저장 완료 -->
+    <div class="modal" id="alert-changed" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert-message">
+                        변경사항이 저장되었습니다.
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <div class="row gx-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- alert : 삭제 확인 -->
+    <div class="modal" id="alert-delete-confirm" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert-message">
+                        삭제된 정보는 복구되지 않습니다. <br>
+                        삭제하시겠습니까?
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <div class="row gx-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary w-100">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 비밀번호 변경 -->
+    <div class="modal" id="modal-password-input" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">비밀번호 입력</h5>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label for="pw" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="pw">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row gx-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary w-100">변경완료</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 공급사 정보 등록 -->
+    <div class="modal" id="modal-new-supplier" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">공급사 정보 등록</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- <div class="form-error">
+                    <p>사업자등록증이 유효하지 않은 파일 형식입니다.</p>
+                </div> -->
+                    <div class="mb-4">
+                        <label for="businessDoc" class="form-label">사업자 등록증<strong class="required">필수입력</strong></label>
+                        <div class="row gx-3">
+                            <div class="col">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control pe-7" id="businessDoc" placeholder="JPG, PNG, JPEG, PDF 가능">
+                                    <button type="button" aria-label="파일삭제" class="file-delete"><i class="icon-file-delete"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary">파일 선택</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="row align-items-center mb-2">
+                            <div class="col">
+                                <label for="businessNum" class="form-label mb-0">사업자 등록 번호<strong class="required">필수입력</strong></label>
+                            </div>
+                            <div class="col-auto">
+                                <p class="valid-feedback mt-0" id="numValidation">
+                                    <i class="icon-validation-success me-1"></i>등록 가능한 사업자 등록 번호입니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row gx-3">
+                            <div class="col">
+                                <div class="row align-items-center gx-2">
+                                    <div class="col-auto">
+                                        <input type="tel" class="form-control" id="businessNum" style="width:90px">
+                                    </div>
+                                    <div class="col-auto">-</div>
+                                    <div class="col-auto">
+                                        <input type="tel" class="form-control" title="사업자등록번호 가운데자리" style="width: 75px">
+                                    </div>
+                                    <div class="col-auto">-</div>
+                                    <div class="col">
+                                        <input type="tel" class="form-control" title="사업자등록번호 끝자리">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary" id="btnMumCertification">등록 확인</button>
+                                <script>
+                                    $('#btnMumCertification').on('click', function() {
+                                        $('#numValidation').show();
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-4">
+                        <div class="col">
+                            <label for="supplierCeo" class="form-label">대표자 명</label>
+                            <input type="text" class="form-control" id="supplierCeo">
+                        </div>
+                        <div class="col">
+                            <label for="supplierName" class="form-label">법인명(상호)<strong class="required">필수입력</strong></label>
+                            <input type="text" class="form-control" id="supplierName">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="supplierAddr" class="form-label">사업장 주소<strong class="required">필수입력</strong></label>
+                        <div class="row gx-3 mb-4">
+                            <div class="col">
+                                <input type="text" class="form-control" id="supplierAddr">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary">주소 검색</button>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" title="사업장 상세 주소">
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col">
+                            <label for="supplierTel" class="form-label">전화번호</label>
+                            <input type="tel" class="form-control" id="supplierTel">
+                        </div>
+                        <div class="col">
+                            <label for="supplierFax" class="form-label">FAX</label>
+                            <input type="tel" class="form-control" id="supplierFax">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row gx-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#alert-user-added">등록 완료</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 사용자 정보 등록 -->
+    <div class="modal" id="modal-new-user" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">사용자 정보 등록</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-error">
+                        <p>이미 등록된 휴대폰 번호입니다. <br>
+                            휴대폰 번호는 회사 단위로 중복 체크됩니다.</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="userMobile" class="form-label">휴대폰 번호(계정 ID)</label>
+                        <div class="row gx-3">
+                            <div class="col">
+                                <input type="text" class="form-control" id="userMobile" placeholder="01012345678">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary">중복 체크</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-4">
+                        <div class="col">
+                            <label for="userName" class="form-label">성명<strong class="required">필수입력</strong></label>
+                            <input type="text" class="form-control" id="userName">
+                        </div>
+                        <div class="col">
+                            <label for="userPosition" class="form-label">직급</label>
+                            <input type="text" class="form-control" id="userPosition" placeholder="대표(마스터)">
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-5">
+                        <div class="col">
+                            <label for="userPw" class="form-label">비밀번호<strong class="required">필수입력</strong></label>
+                            <input type="password" class="form-control" id="userPw">
+                        </div>
+                        <div class="col">
+                            <label for="userPwRe" class="form-label">비밀번호 확인<strong class="required">필수입력</strong></label>
+                            <input type="password" class="form-control" id="userPwRe">
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label for="supplierEmail" class="form-label">이메일<strong class="required">필수입력</strong>
+                        </label>
+                        <div class="row gx-2 align-items-center">
+                            <div class="col">
+                                <input type="email" class="form-control" id="supplierEmail">
+                            </div>
+                            <div class="col-auto">@</div>
+                            <div class="col">
+                                <input type="email" class="form-control" id="supplierEmailDomain">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col">
+                            <label for="userPw" class="form-label">담당 업무</label>
+                            <input type="password" class="form-control" id="userPw">
+                        </div>
+                        <div class="col">
+                            <label for="useAvailability" class="form-label">사용 여부</label>
+                            <div class="btn-group d-flex">
+                                <input type="radio" class="btn-check" name="options" id="option1">
+                                <label class="btn btn-success px-0" for="option1">사용 가능</label>
+                                <input type="radio" class="btn-check" name="options" id="option2">
+                                <label class="btn btn-danger px-0" for="option2">사용 불가</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row gx-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">취소</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary w-100">등록 완료</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 사용자 정보 상세 -->
+    <div class="modal" id="modal-user-detail" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">사용자 정보</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <label for="userMobile" class="form-label">휴대폰 번호(계정 ID)</label>
+                        <div class="row gx-3">
+                            <div class="col">
+                                <input type="text" class="form-control" id="userMobile" placeholder="01012345678" value="01012345678">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary">중복 체크</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-4">
+                        <div class="col">
+                            <label for="userName" class="form-label">성명<strong class="required">필수입력</strong></label>
+                            <input type="text" class="form-control" id="userName" value="홍길동">
+                        </div>
+                        <div class="col">
+                            <label for="userPosition" class="form-label">직급</label>
+                            <input type="text" class="form-control" id="userPosition" placeholder="대표(마스터)" value="과장">
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-5">
+                        <div class="col">
+                            <label for="userPw" class="form-label">비밀번호<strong class="required">필수입력</strong></label>
+                            <input type="password" class="form-control" id="userPw" value="12345678">
+                        </div>
+                        <div class="col">
+                            <label for="userPwRe" class="form-label">비밀번호 확인<strong class="required">필수입력</strong></label>
+                            <input type="password" class="form-control" id="userPwRe" value="12345678">
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label for="supplierEmail" class="form-label">이메일<strong class="required">필수입력</strong>
+                        </label>
+                        <div class="row gx-2 align-items-center">
+                            <div class="col">
+                                <input type="email" class="form-control" id="supplierEmail" value="abcde12345">
+                            </div>
+                            <div class="col-auto">@</div>
+                            <div class="col">
+                                <input type="email" class="form-control" id="supplierEmailDomain" value="gmail.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-5">
+                        <div class="col">
+                            <label for="userPw" class="form-label">담당 업무</label>
+                            <input type="password" class="form-control" id="userPw" value="판매">
+                        </div>
+                        <div class="col">
+                            <label for="useAvailability" class="form-label">사용 여부</label>
+                            <div class="btn-group d-flex">
+                                <input type="radio" class="btn-check" name="options2" id="option2-1">
+                                <label class="btn btn-success px-0" for="option2-1">사용 가능</label>
+                                <input type="radio" class="btn-check" name="options2" id="option2-2" checked>
+                                <label class="btn btn-danger px-0" for="option2-2">사용 불가</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit-info">
+                        <dl>
+                            <dt>등록인 / 등록 일시</dt>
+                            <dd>이호웅(마스터) / 2022-01-01 22:41:17</dd>
+                            <dt>수정인 / 수정 일시</dt>
+                            <dd>-</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row gx-3 justify-content-between">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
+                        </div>
+                        <div class="col-auto">
+                            <div class="row gx-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">취소</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-primary" style="width: 120px">변경 완료</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 고객사 상세 -->
+    <div class="modal" id="modal-customer-detail" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 1236px">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">고객사 상세 관리</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal row">
+                        <div class="col">
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">고객사명</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="바나나마트">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">고객사 코드</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="48631">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="" class="col-auto4 text-end">대표자 명</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="이호웅">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">사업자 번호</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="528-87-01416">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">거래 상태</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="운영 중">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="" class="col-auto text-end">고객사 상태</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="거래 중">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-2 h-100">
+                                <label for="" class="col-auto text-end">주소</label>
+                                <div class="col">
+                                    <textarea class="form-control form-control-sm h-100">경기 용인시 기흥구 마북로 132</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top mt-5 py-5">
+                        <div class="form-horizontal row">
+                            <label for="" class="col-auto text-end">관리 메모</label>
+                            <div class="col">
+                                <textarea class="form-control form-control-sm" style="height: 85px">맥클라렌은 1999년 초반에 맨유 수석 코치로 부임했다. 맥클라렌 코치는 퍼거슨 감독의 오른팔 역할을 성공적으로 수행했고, 맨유는 1998-99시즌에 구단 역사상 최초로 트레블을 달성했
+                            다. 맥클라렌은 2002 한일 월드컵을 앞두고 잉글랜드 대표팀 코치로 부임하면서 맨유와 결별했다.
+                            맥클라렌은 20년이 훨씬 지난 2022년에 다시 맨유로 복귀하게 됐다. 맥클라렌 코치는 맨유 정식 감독이 된 텐 하흐와 좋은 인연을 쌓고 있었고, 텐 하흐 감독은 맨유에 맥클라렌 코치 선임을
+                            요구했다. 맨유는 텐 하흐 감독의 요청을 곧바로 허락했다. 텐 하흐 감독은 맥클라렌에게 잉글랜드 축구에 대한 전반적인 조언을 받고 있는 것으로 알려졌다.
+                            맥클라렌은 자신이 진행하는 팟캐스트에 출연해 텐 하흐 감독에게 어떤 인상을 받았는지를 설명했다. 그는 "(텐 하흐 감독은) 디테일에 대한 관심을 가지고, 올바르게 일하기 위해 모든 걸 세
+                            세하게 계획한다. 텐 하흐 감독은 아약스에서 우승을 다음 날부터 그랬다. 그는 이제 다음 단계를 밟아가고 있다. 퍼거슨 감독이 하던 것과 비슷하다"고 설명했다.
+                            이어 "우리는 텐 하흐를 지원하고, 성공하길 기원한다. 직업 윤리와 세부 세항에 대한 관심은 텐 하흐 감독이 지난 7일 동안 보여준 것이다. 그는 직접 만나게 될 모든 직원들을 모두 실제로 만
+                            났다. 서로 협력하고, 계획을 유지하고, 올바른 헌신을 보여준다면 우리가 원하는 성공을 이룰 것"이라며 텐 하흐의 맨유가 성공할 것이라고 확신했다.</textarea>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end mt-4">
+                            <span class="text-secondary">작성자</span>
+                            <span class="ms-2">홍길동</span>
+                            <i class="icon-bar mx-3"></i>
+                            <span class="text-secondary">작성일</span>
+                            <span class="ms-2">2022-06-29 11:23:57</span>
+                        </div>
+                    </div>
+                    <div class="bg-in-modal mx-n5">
+                        <div class="box">
+                            <div class="table-wrap">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">납품 내역납품 내역 <span class="fw-normal">(최근 납품 내역)</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <span class="text-danger">* 부가세 포함</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-body" style="height: 220px">
+                                    <div>테이블 영역</div>
+                                    <div style="text-align: right">
+                                        <div class="position-relative d-inline-block">
+                                            <button type="button" class="btn btn-outline-primary btn-xs btn-memo-view"><i class="icon-memo me-2"></i>메모 내용 보기</button>
+                                            <script>
+                                                $('.btn-memo-view').on('click', function() {
+                                                    $(this).toggleClass('active');
+                                                });
+                                                $(document).on('mouseup', function(e) {
+                                                    e.preventDefault();
+                                                    if ($('.btn-memo-view').has(e.target).length === 0 && $('.memo-tooltip').has(e.target).length === 0) {
+                                                        $('.btn-memo-view').removeClass('active');
+                                                    }
+                                                });
+                                            </script>
+                                            <div class="memo-tooltip">
+                                                <div class="row form-horizontal">
+                                                    <label for="" class="col-auto w-auto">관리 메모</label>
+                                                    <div class="col">
+                                                        <textarea rows="4" class="form-control form-control-sm">발주 확인</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-end mt-3">
+                                                    <span class="text-secondary">작성자</span>
+                                                    <span class="ms-2">홍길동</span>
+                                                    <i class="icon-bar mx-3"></i>
+                                                    <span class="text-secondary">작성일</span>
+                                                    <span class="ms-2">2022-06-29 11:23:57</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row gx-3 justify-content-between">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
+                        </div>
+                        <div class="col-auto">
+                            <div class="row gx-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">취소</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-primary" style="width: 120px">변경 완료</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 상품 상세 -->
+    <div class="modal" id="modal-product-detail" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 960px">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">상품 상세 정보</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal row">
+                        <div class="col-auto">
+                            <div class="thumbs">
+                                <!-- 이미지 없을때 -->
+                                <i class="icon-noimage"></i>
+                                <!-- 이미지 있을떄 -->
+                                <!-- <img src="../assets/images/@product.jpeg" alt="" class="rounded"> -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">상품 명</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="매운 블랙 신라면">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">규격</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="230g">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="" class="col-auto4 text-end">단위</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="ea">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">상품 코드</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="880 6533 742132">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label for="" class="col-auto text-end">입수</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="236">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="" class="col-auto text-end">면과세 구분</label>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-sm" value="과세">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top mt-5 py-4">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-secondary btn-sm"><i class="icon-image me-2"></i>상품 이미지 추가</button>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <span class="text-secondary">작성자</span>
+                                    <span class="ms-2">홍길동</span>
+                                    <i class="icon-bar mx-3"></i>
+                                    <span class="text-secondary">작성일</span>
+                                    <span class="ms-2">2022-06-29 11:23:57</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-in-modal mx-n5">
+                        <div class="box">
+                            <div class="table-wrap">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">고객사 입점 정보 <span class="fw-normal">(7)</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-body" style="height: 220px">
+                                    <div>테이블 영역</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row gx-3 justify-content-between">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
+                        </div>
+                        <div class="col-auto">
+                            <div class="row gx-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">닫기</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-primary" style="width: 120px">저장</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

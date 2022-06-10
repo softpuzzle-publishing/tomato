@@ -457,11 +457,17 @@
                             <div class="table-body" style="height: 220px">
                                 <div>테이블 영역</div>
                                 <div style="text-align: right">
-                                    <div class="position-relative">
+                                    <div class="position-relative d-inline-block">
                                         <button type="button" class="btn btn-outline-primary btn-xs btn-memo-view"><i class="icon-memo me-2"></i>메모 내용 보기</button>
                                         <script>
                                             $('.btn-memo-view').on('click', function() {
                                                 $(this).toggleClass('active');
+                                            });
+                                            $(document).on('mouseup', function(e) {
+                                                e.preventDefault();
+                                                if ($('.btn-memo-view').has(e.target).length === 0 && $('.memo-tooltip').has(e.target).length === 0) {
+                                                    $('.btn-memo-view').removeClass('active');
+                                                }
                                             });
                                         </script>
                                         <div class="memo-tooltip">

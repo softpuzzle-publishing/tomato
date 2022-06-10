@@ -37,11 +37,11 @@
                                                         <div class="date-layer-body">
                                                             <div class="row gx-3 align-items-center mb-5">
                                                                 <div class="col">
-                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
                                                                 </div>
                                                                 <div class="col-auto">~</div>
                                                                 <div class="col">
-                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
                                                                 </div>
                                                             </div>
                                                             <div class="row row-cols-2 g-3">
@@ -78,7 +78,11 @@
                                                         });
                                                         $(document).on('mouseup', function (e) {
                                                             e.preventDefault();
-                                                            if ($('.btn-date-range').has(e.target).length === 0 && $('.date-layer').has(e.target).length === 0) {
+                                                            if (
+                                                                $('.btn-date-range').has(e.target).length === 0 &&
+                                                                $('.date-layer').has(e.target).length === 0 &&
+                                                                $('.datepicker').has(e.target).length === 0
+                                                            ) {
                                                                 $('.btn-date-range').closest('.row').removeClass('active');
                                                             }
                                                         });
@@ -87,7 +91,7 @@
                                             </div>
                                             <div class="col-auto order-1">
                                                 <div class="selected-date-range">
-                                                    <input type="text" class="form-control" value="시스템 연결일 : 2022-04-24 ~ 2022-05-23" readonly>
+                                                    <span class="date">시스템 연결일 : 2022-04-24 ~ 2022-05-23</span>
                                                     <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
                                                 </div>
                                             </div>

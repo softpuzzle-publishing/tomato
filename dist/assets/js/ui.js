@@ -14,6 +14,24 @@ var Common = {
       e.preventDefault();
       $(this).toggleClass("active");
     });
+    $('[data-picker="date"]').datepicker({
+      todayBtn: true,
+      autoclose: true
+    });
+    $('[data-picker="month"]').datepicker({
+      todayBtn: true,
+      autoclose: true,
+      minViewMode: 1,
+      maxViewMode: 1,
+      format: "yyyy-mm"
+    });
+    $('[data-picker="year"]').datepicker({
+      todayBtn: true,
+      autoclose: true,
+      minViewMode: 2,
+      maxViewMode: 2,
+      format: 'yyyy'
+    });
   }
 };
 var Aside = {
