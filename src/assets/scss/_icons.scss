@@ -23,8 +23,8 @@
     }
 }
 .icon-calendar{width: 18px;height: 18px; background-image: url('../images/icon-calendar.svg');
-    *:not(.btn-white):active > &,
-    *:not(.btn-white):hover > &{
+    .btn:not(.btn-white):active > &,
+    .btn:not(.btn-white):hover > &{
         background-image: url('../images/icon-calendar-white.svg');
     }
 }
@@ -45,6 +45,13 @@
     *:not(.btn-white):active > &,
     *:not(.btn-white):hover > &{
         background-image: url('../images/icon-memo-white.svg');
+    }
+}
+.icon-check{width: 16px;height: 12px; background-image: url('../images/icon-check.svg');
+    *:not(.btn-white).active > &,
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-check-white.svg');
     }
 }
 .icon-noimage{width: 47px;height: 47px; background-image: url('../images/icon-noimage.svg');}

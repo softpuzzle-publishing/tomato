@@ -239,10 +239,11 @@ thead.table-dark{
 .date-layer{
     width: 420px;background: #FFFFFF;box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);border-radius: 6px;padding: 1.5rem;display: none;
     position: absolute;right: 0;top: 44px;z-index: 99;
-    .tit{text-align: center;font-size: 18px;font-weight: 700;border-bottom: 1px solid #EBEDF3;padding-bottom: 18px;line-height: 1.2;margin-bottom: 1.5rem;}
+    .tit{text-align: center;font-size: 18px;font-weight: 700;border-bottom: 1px solid #EBEDF3;padding-bottom: 18px;line-height: 1.2;}
     .active &{
         display: block;
     }
+    .date-layer-body{padding-top: 1.5rem;}
 }
 
 .btn-date-range{
@@ -250,6 +251,11 @@ thead.table-dark{
         background-color: #fff;border-color: $primary;color: $primary;
         .icon-calendar{background-image: url('../images/icon-calendar-blue.svg');}
     }
+}
+
+.form-control-group{
+    position: relative;
+    .icon-calendar{position: absolute;right: 11px;top: 50%;transform: translateY(-50%);}
 }
 
 .form-horizontal{
