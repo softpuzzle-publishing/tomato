@@ -1,4 +1,6 @@
-[class^=icon-]{display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;}
+[class^=icon-]{
+    display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;
+}
 .icon-user{width: 14px;height: 16px; background-image: url('../images/icon-user.svg');}
 .icon-house{width: 22px;height: 23px; background-image: url('../images/icon-house.svg');}
 .icon-list-check{width: 24px;height: 23px; background-image: url('../images/icon-list-check.svg');}
@@ -22,13 +24,25 @@
         background-image: url('../images/icon-plus-white.svg');
     }
 }
+.icon-minus{width: 16px;height: 16px; background-image: url('../images/icon-minus.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-minus-white.svg');
+    }
+}
 .icon-calendar{width: 18px;height: 18px; background-image: url('../images/icon-calendar.svg');
     .btn:not(.btn-white):active > &,
     .btn:not(.btn-white):hover > &{
         background-image: url('../images/icon-calendar-white.svg');
     }
 }
-.icon-download{width: 20px;height: 20px; background-image: url('../images/icon-download.svg');
+.icon-upload{width: 18px;height: 18px; background-image: url('../images/icon-upload.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-upload-white.svg');
+    }
+}
+.icon-download{width: 18px;height: 18px; background-image: url('../images/icon-download.svg');
     *:not(.btn-white):active > &,
     *:not(.btn-white):hover > &{
         background-image: url('../images/icon-download-white.svg');
@@ -52,6 +66,18 @@
     *:not(.btn-white):active > &,
     *:not(.btn-white):hover > &{
         background-image: url('../images/icon-check-white.svg');
+    }
+}
+.icon-printer{width: 15px;height: 18px; background-image: url('../images/icon-printer.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-printer-white.svg');
+    }
+}
+.icon-file-download{width: 16px;height: 18px; background-image: url('../images/icon-file-download.svg');
+    *:not(.btn-white):active > &,
+    *:not(.btn-white):hover > &{
+        background-image: url('../images/icon-file-download-white.svg');
     }
 }
 .icon-noimage{width: 47px;height: 47px; background-image: url('../images/icon-noimage.svg');}

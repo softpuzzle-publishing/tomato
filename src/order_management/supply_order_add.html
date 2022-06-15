@@ -3,7 +3,6 @@
 
 <head>
     @@include('@@webRoot/_include/_head.html')
-</head>
 
 <body>
     <div id="wrap">
@@ -16,7 +15,7 @@
                 @@include('@@webRoot/_include/_lnb.html')
 
                 <!-- 실컨텐츠 -->
-                <h1 class="visually-hidden">구매 발주 접수 관리</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <h1 class="visually-hidden">공급 발주 등록</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
                 <div class="content-wrapper">
                     <div class="content-header">
                         <div class="filter">
@@ -32,7 +31,7 @@
                                                     <button type="button" class="btn btn-outline-secondary btn-sm btn-date-range" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
                                                     <div class="date-layer">
                                                         <div class="date-layer-head">
-                                                            <div class="tit">구매 발주일</div>
+                                                            <div class="tit">공급 발주일</div>
                                                         </div>
                                                         <div class="date-layer-body">
                                                             <div class="row gx-3 align-items-center mb-5">
@@ -91,7 +90,7 @@
                                             </div>
                                             <div class="col-auto order-1">
                                                 <div class="selected-date-range">
-                                                    <span class="date">구매 발주일 : 2022-04-24 ~ 2022-05-23</span>
+                                                    <span class="date">공급 발주일 : 2022-04-24 ~ 2022-05-23</span>
                                                     <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
                                                 </div>
                                             </div>
@@ -135,10 +134,7 @@
                                         <div class="table-top">
                                             <div class="row align-items-center justify-content-between">
                                                 <div class="col-auto">
-                                                    <div class="table-title">구매 발주 집계 <span class="fw-normal">(24)</span></div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-check me-2"></i>전체 접수</button>
+                                                    <div class="table-title">공급 발주 집계 <span class="fw-normal">(24)</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,7 +152,7 @@
                                         <div class="table-top">
                                             <div class="row align-items-center justify-content-between">
                                                 <div class="col-auto">
-                                                    <div class="table-title">구매 발주 내역</div>
+                                                    <div class="table-title">공급 발주 내역</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,39 +166,24 @@
                                                                 <input type="text" class="form-control form-control-sm" value="바나나마트">
                                                             </div>
                                                         </div>
-                                                        <div class="row mb-2">
+                                                        <div class="row">
                                                             <label for="" class="col-auto text-end">고객사 코드</label>
                                                             <div class="col">
                                                                 <input type="text" class="form-control form-control-sm" value="48631">
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <label for="" class="col-auto4 text-end">구분</label>
-                                                            <div class="col">
-                                                                <input type="text" class="form-control form-control-sm" value="발주 / 반품">
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="row mb-2">
-                                                            <label for="" class="col-auto text-end">구매 발주 일자</label>
+                                                            <label for="" class="col-auto text-end">전표</label>
                                                             <div class="col">
-                                                                <input type="text" class="form-control form-control-sm" value="2022-06-27 (월)">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <label for="" class="col-auto text-end">입고 요청일</label>
-                                                            <div class="col">
-                                                                <input type="text" class="form-control form-control-sm" value="2022-06-29 (수)">
+                                                                <input type="text" class="form-control form-control-sm" value="1">
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <label for="" class="col-auto text-end">납품 예정일</label>
+                                                            <label for="" class="col-auto text-end">입고 예정일</label>
                                                             <div class="col">
-                                                                <div class="form-control-group">
-                                                                    <input type="text" class="form-control form-control-sm" value="2022-06-28 (화)" data-picker="date">
-                                                                    <i class="icon-calendar"></i>
-                                                                </div>
+                                                                <input type="text" class="form-control form-control-sm" value="2022-06-29 (수)">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -223,26 +204,38 @@
                                                 </div>
                                                 <div class="frame flex-grow-1">
                                                     <!-- <div class="d-flex h-100 align-items-center justify-content-center">
-                                                        <p class="data-empty">구매 발주 집계 목록에서 대상을 선택해주세요.</p>
+                                                        <p class="data-empty">공급 발주 집계 목록에서 대상을 선택해주세요.</p>
                                                     </div> -->
-                                                    ibsheet
+                                                    <div class="d-flex flex-column h-100">
+                                                        <div class="row gx-3 justify-content-end mb-3">
+                                                            <div class="col-auto">
+                                                                <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-file-download me-2"></i>양식 저장</button>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-upload me-2"></i>엑셀 업로드</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            ibsheet
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="table-bottom">
                                             <div class="row justify-content-between">
                                                 <div class="col">
-                                                    <button type="button" class="btn btn-outline-secondary px-6">반려</button>
-                                                </div>
-                                                <div class="col-auto">
                                                     <div class="row gx-3">
                                                         <div class="col-auto">
-                                                            <button type="button" class="btn btn-secondary" style="width: 120px" data-bs-toggle="modal" data-bs-target="#alert-order-edit-warning">수정</button>
+                                                            <button type="button" class="btn btn-outline-secondary" style="width: 120px" data-bs-toggle="modal" data-bs-target="#modal-row-add"><i class="icon-plus me-2"></i>행 추가</button>
                                                         </div>
                                                         <div class="col-auto">
-                                                            <button type="button" class="btn btn-primary" style="width: 120px">접수</button>
+                                                            <button type="button" class="btn btn-outline-secondary" style="width: 120px" data-bs-toggle="modal" data-bs-target="#alert-row-delete-confirm"><i class="icon-minus me-2"></i>행 삭제</button>
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-primary" style="width: 120px">접수</button>
                                                 </div>
                                             </div>
                                         </div>
