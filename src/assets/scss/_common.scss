@@ -327,3 +327,13 @@ thead.table-dark{
         }
     }
 }
+
+.btn-group .product-btn:checked{
+    &+.btn-border-line{
+        background-color: rgba(67, 74, 250, 0.1); border-color: #383ECD; font-weight: 500;
+    }
+    &:not(:checked)+.btn:hover{
+        border-left: 1px solid #383ECD;
+    }
+}
+
