@@ -16,7 +16,7 @@
                 @@include('@@webRoot/_include/_lnb.html')
 
                 <!-- 실컨텐츠 -->
-                <h1 class="visually-hidden">기간별 매출 조회</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <h1 class="visually-hidden">매출액 및 재고 현황</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
                 <div class="content-wrapper">
                     <div class="content-header">
                         <div class="filter">
@@ -32,55 +32,44 @@
                                                     <button type="button" class="btn btn-outline-secondary btn-sm btn-date-range" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
                                                     <div class="date-layer">
                                                         <div class="date-layer-head">
-                                                            <ul class="nav nav-tabs nav-justified border-bottom-0" role="tablist">
-                                                                <li class="nav-item" role="presentation">
-                                                                    <button class="nav-link tit active" data-bs-toggle="tab" data-bs-target="#search-tab-1" type="button" role="tab">연별 조회</button>
-                                                                </li>
-                                                                <li class="nav-item" role="presentation">
-                                                                    <button class="nav-link tit" data-bs-toggle="tab" data-bs-target="#search-tab-2" type="button" role="tab">월별 조회</button>
-                                                                </li>
-                                                                <li class="nav-item" role="presentation">
-                                                                    <button class="nav-link tit" data-bs-toggle="tab" data-bs-target="#search-tab-3" type="button" role="tab">일자별 조회</button>
-                                                                </li>
-                                                            </ul>
+                                                            <div class="tit">매출액 및 재고 현황 조회 기간</div>
                                                         </div>
-                                                        <div class="date-layer-body pt-5">
-                                                            <div class="tab-content" id="myTabContent">
-                                                                <div class="tab-pane fade show active" id="search-tab-1" role="tabpanel">
-                                                                    <div class="row gx-3 align-items-center mb-5">
-                                                                        <div class="col">
-                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000" title="날짜 선택" data-picker="year">
-                                                                        </div>
-                                                                        <div class="col-auto">~</div>
-                                                                        <div class="col">
-                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000" title="날짜 선택" data-picker="year">
-                                                                        </div>
-                                                                    </div>
+                                                        <div class="date-layer-body">
+                                                            <div class="row gx-3 align-items-center mb-5">
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
                                                                 </div>
-                                                                <div class="tab-pane fade" id="search-tab-2" role="tabpanel">
-                                                                    <div class="row gx-3 align-items-center mb-5">
-                                                                        <div class="col">
-                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
-                                                                        </div>
-                                                                        <div class="col-auto">~</div>
-                                                                        <div class="col">
-                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="tab-pane fade" id="search-tab-3" role="tabpanel">
-                                                                    <div class="row gx-3 align-items-center mb-5">
-                                                                        <div class="col">
-                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
-                                                                        </div>
-                                                                        <div class="col-auto">~</div>
-                                                                        <div class="col">
-                                                                            <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
-                                                                        </div>
-                                                                    </div>
+                                                                <div class="col-auto">~</div>
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00" title="날짜 선택" data-picker="month">
                                                                 </div>
                                                             </div>
-
+                                                            <div class="row row-cols-2 g-3">
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange1">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange1">금일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange2">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange2">작일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange3">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange3">1주일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange4">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange4">1개월</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange5">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange5">3개월</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange6">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange6">6개월</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <script>
@@ -102,7 +91,7 @@
                                             </div>
                                             <div class="col-auto order-1">
                                                 <div class="selected-date-range">
-                                                    <span class="date">연별 조회 : 2021 ~ 2022</span>
+                                                    <span class="date">매출액 및 재고 현황 조회 기간 : 2022-04-24 ~ 2022-05-23</span>
                                                     <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
                                                 </div>
                                             </div>
@@ -119,8 +108,12 @@
                                         <div class="row align-items-center gx-3">
                                             <div class="col-auto">
                                                 <select class="form-select" aria-label="고객사 기준 조회">
-                                                    <option selected>고객사 기준 조회</option>
-                                                    <option value="">상품 기준 조회</option>
+                                                    <option selected>소진일 기준 전체</option>
+                                                    <option value="">3일 이하</option>
+                                                    <option value="">7일 이하</option>
+                                                    <option value="">15일 이하</option>
+                                                    <option value="">30일 이하</option>
+                                                    <option value="">30일 초과</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -153,12 +146,12 @@
                                 <div class="table-top">
                                     <div class="row align-items-center justify-content-between">
                                         <div class="col-auto">
-                                            <div class="table-title">고객사별 기간별 매출 조회 <span class="fw-normal">(24)</span></div>
+                                            <div class="table-title">고객사별 매출액 및 재고 현황 조회 내역 <span class="fw-normal">(24)</span></div>
                                         </div>
                                         <div class="col-auto">
                                             <div class="row gx-3 align-items-center">
                                                 <div class="col-auto">
-                                                    <span class="text-danger me-3 align-middle">* 납품 완료 기준 데이터 (VAT 포함)</span>
+                                                    <span class="text-danger me-3 align-middle">* VAT 포함 <br>* 매출 및 재고 데이터 공유를 허용한 마트의 데이터만 조회가 가능</span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
@@ -169,7 +162,7 @@
                                 </div>
                                 <div class="table-body">
                                     <div style="text-align: center">
-                                        <a href="#modal-sales-detail" data-bs-toggle="modal" class="me-3">매출 상세 조회</a>
+                                        <a href="#alert-only-one-customer" data-bs-toggle="modal" class="me-3">1개의 고객사 alert</a>
                                     </div>
                                 </div>
                             </div>
