@@ -965,7 +965,7 @@
 </div>
 
 <!-- modal : 상품 관리 상세 -->
-<div class="modal" id="modal-fee-product-detail" tabindex="-1" data-bs-backdrop="static" style="display: block;">
+<div class="modal" id="modal-fee-product-detail" tabindex="-1" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 1440px">
         <div class="modal-content">
             <div class="modal-header bg-dark">
@@ -973,7 +973,7 @@
             </div>
             <div class="modal-body">
                 <div class="row gx-8 h-100">
-                    <div class="col">
+                    <div class="col-4">
                         <div class="table-wrap">
                             <div class="table-top">
                                 <div class="table-title text-center">① 기본 정보</div>
@@ -1042,7 +1042,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col border-start">
+                    <div class="col-4 border-start">
                         <div class="table-wrap">
                             <div class="table-top">
                                 <div class="table-title text-center">② 행사 정보</div>
@@ -1087,7 +1087,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col border-start">
+                    <div class="col-4 border-start">
                         <div class="table-wrap">
                             <div class="table-top">
                                 <div class="table-title text-center">③ APP 전시 정보</div>
@@ -1130,19 +1130,15 @@
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="item">
-                                                        <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="item">
-                                                        <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
+                                                        <button type="button" aria-label="이미지 추가"><i class="icon-plus"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <script>
                                             var swiperThumbs = new Swiper('.thumbs-swiper .swiper-container', {
-                                                slidesPerView: 2.7
+                                                slidesPerView: 2.7,
+                                                spaceBetween: 12
                                             });
                                         </script>
                                     </div>
