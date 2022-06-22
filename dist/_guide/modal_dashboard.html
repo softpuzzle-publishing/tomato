@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>(modal_login)TOMATO B2B</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-Compatible" content="IE=edge">
+    <title>TOMATO B2B</title>
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32">
+
+    <!-- library css -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- library js -->
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="../assets/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js"></script>
+    <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="../assets/js/ui.js" defer></script>
+    <style>
+        body {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal {
+            display: block !important;
+            position: static !important;
+            height: auto !important;
+        }
+
+        .modal-dialog {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- modal : 공지사항 상세 -->
+    <div class="modal" id="modal-notice-detail" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 720px">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">공지사항</h5>
+                </div>
+                <div class="modal-body pb-0">
+                    <div class="notice">
+                        <div class="info">
+                            <span class="badge badge-outline-primary">긴급</span>
+                            <div class="d-flex">
+                                <span class="writer">관리자</span>
+                                <span class="date">2022-06-30 11:23:57</span>
+                            </div>
+                        </div>
+                        <div class="tit">
+                            백오피스 프로그램 오류 발생으로 인한 긴급 업데이트 사항에 대해 안내드립니다.
+                        </div>
+                        <div class="attachment">
+                            <div class="file">
+                                <i class="icon-attachment"></i>
+                                <span>첨부파일</span>
+                                <strong>3</strong>
+                                <span class="size">(3.49MB)</span>
+                            </div>
+                            <ul class="file-list">
+                                <li>
+                                    <i class="icon-attachment-down"></i>
+                                    <a href="#none">lkadfjgeromn.jpg</a>
+                                    <span class="size">1.23MB</span>
+                                </li>
+                                <li>
+                                    <i class="icon-attachment-down"></i>
+                                    <a href="#none">notice_document_notice_documentnotice_document+notice_document_notice_documentnotice_document.pdf</a>
+                                    <span class="size">1.23MB</span>
+                                </li>
+                            </ul>
+                            <a href="#none" class="save">전체 저장</a>
+                        </div>
+                        <div class="detail">
+                            공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사 <br>
+                            항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용<br>
+                            공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용<br><br>
+
+                            공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사<br>
+                            항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용<br>
+                            공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용 공지사항 내용<br>
+                            공지사항 내용
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <div class="row gx-3 justify-content-between">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-secondary px-6" data-bs-dismiss="modal">수정</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
