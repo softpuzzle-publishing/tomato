@@ -3,17 +3,6 @@ let Common = {
         this.event();
     },
     event: function () {
-        $('[data-toggle="right-card"]').on('click', function (e) {
-            e.preventDefault();
-            $("#right-card").toggleClass("d-none");
-        });
-
-        // 버튼 active
-        $('[data-toggle="btn-select"]').on('click', function (e) {
-            e.preventDefault();
-            $(this).toggleClass("active");
-        });
-
         $('[data-picker="date"]').datepicker({
             todayBtn: true,
             autoclose: true,
@@ -41,18 +30,23 @@ let Aside = {
     },
     lnb: function () {
         //페이지 타이틀명과 비교하여 활성화
-        if ($("h1.visually-hidden").length > 0 ) {
+        if ($("h1.visually-hidden").length > 0) {
+            let $sidebarNav = $('.sidebar-nav');
             let title = $("h1.visually-hidden").text();
             let $active = "";
-            if ($('.sidebar').length > 0) {
-                $(".sidebar a").each(function () {
+            if ($sidebarNav.length > 0) {
+                $sidebarNav.find('span').each(function () {
                     if ($(this).text() === title) {
                         $active = $(this);
                         $active.closest("li").addClass("active");
-                        $active.closest("li.has-treeview").addClass("active");
+                        if ($active.closest(".dep1").hasClass("has-treeview")) {
+                            $active.closest(".dep1").addClass("active");
+                            $active.closest(".dep1").find("ul").clone().appendTo(".lnb");
+                        } else {
+                            $('.lnb').remove();
+                        }
                     }
                 });
-                $active.closest("li.has-treeview").find('ul').clone().appendTo('.lnb');
             }
         }
     }

@@ -447,10 +447,10 @@ $utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg") !defau
 // Style anchor elements.
 
 $link-color:                              $body-color !default;
-$link-decoration:                         underline !default;
+$link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
-$link-hover-decoration:                   null !default;
+$link-hover-decoration:                   underline !default;
 
 $stretched-link-pseudo-element:           after !default;
 $stretched-link-z-index:                  1 !default;
@@ -691,7 +691,7 @@ $mark-bg:                     #fcf8e3 !default;
 
 // scss-docs-start table-variables
 $table-cell-padding-y:        .55rem !default;
-$table-cell-padding-x:        .75rem !default;
+$table-cell-padding-x:        .5rem !default;
 $table-cell-padding-y-sm:     .25rem !default;
 $table-cell-padding-x-sm:     .25rem !default;
 
@@ -1420,9 +1420,9 @@ $toast-header-border-color:         rgba($black, .05) !default;
 $badge-font-size:                   .85714em !default;
 $badge-font-weight:                 $font-weight-bold !default;
 $badge-color:                       $white !default;
-$badge-padding-y:                   .35em !default;
-$badge-padding-x:                   .65em !default;
-$badge-border-radius:               $border-radius !default;
+$badge-padding-y:                   .25em !default;
+$badge-padding-x:                   .5625rem !default;
+$badge-border-radius:               4px !default;
 // scss-docs-end badge-variables
 
 

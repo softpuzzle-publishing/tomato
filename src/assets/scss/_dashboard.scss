@@ -1,0 +1,23 @@
+.today-is{
+    display: flex;align-items: center;padding-left: 1.5rem;
+    strong{margin: 0 1rem;font-weight: 500;transform: translateY(2px);line-height: 1;font-size: 36px;}
+}
+
+.dashboard{
+    display: flex;flex-direction: column;height: 100%;padding: .5rem 0;
+}
+.dashboard-header{margin-bottom: 1.5rem;}
+.dashboard-body{
+    flex-grow: 1;
+    > .row{
+        height: 100%;
+        > .col{
+            height: calc(50% - .75rem);
+        }
+    }
+}
+.dashboard-title{font-size: 24px;line-height: 1;font-weight: 700;}
+.dashboard-data{
+    font-size: 24px;line-height: 1;
+    & + .dashboard-data{margin-top: .5rem;}
+}
