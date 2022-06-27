@@ -59,3 +59,22 @@
         }
     }
 }
+
+.attachment{
+    background: #F2F4FA;border-radius: 6px;padding: 1rem 1.5rem;position: relative;margin-bottom: 1.25rem;min-height: 128px;
+    .save{text-decoration: underline;position: absolute;right: 1.25rem;top: 1rem;}
+    .size{color: #A0A0A0;flex: 0 0 auto;margin-left: .5rem;}
+    .file{
+        display: flex;align-items: center;margin-bottom: .5rem;
+        i{margin-right: .5rem;}
+        strong{color: $primary;margin-left: .5rem;}
+    }
+    .file-list{
+        li{display: flex;}
+        li + li{margin-top: .25rem;}
+        i{flex: 0 0 auto;margin-right: .5rem;}
+        a{color: $primary;text-decoration: underline;flex: 0 0 auto;max-width: 80%;word-break: break-all;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+        .btn-del{margin-left: .5rem;transform: translateY(-2px);}
+    }
+    .data-empty{color: #9C9FA9;text-align: center;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+}

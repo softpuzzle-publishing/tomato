@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+    <div id="wrap">
+
+        @@include('@@webRoot/_include/_header.html')
+        <div id="container">
+            @@include('@@webRoot/_include/_aside.html')
+            <main id="main">
+
+                @@include('@@webRoot/_include/_lnb.html')
+
+                <!-- 실컨텐츠 -->
+                <h1 class="visually-hidden">공지사항 관리</h1> <!-- 페이지 메뉴명 감지하여 해당 lnb,gnb 활성화 시킴 -->
+                <div class="content-wrapper">
+                    <div class="content-header">
+                        <div class="filter">
+                            <div class="filter-top">
+                                <div class="row gx-3 align-items-center">
+                                    <div class="col">
+                                        <div class="filter-title">상세 조회</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto order-2">
+                                                <div class="position-relative">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm btn-date-range" style="width: 112px"><i class="icon-calendar me-2"></i>기간 설정</button>
+                                                    <div class="date-layer">
+                                                        <div class="date-layer-head">
+                                                            <div class="tit">등록일 조회 기간</div>
+                                                        </div>
+                                                        <div class="date-layer-body">
+                                                            <div class="row gx-3 align-items-center mb-5">
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                                                                </div>
+                                                                <div class="col-auto">~</div>
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control with-icon-calendar" placeholder="0000-00-00" title="날짜 선택" data-picker="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row row-cols-2 g-3">
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange1">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange1">금일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange2">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange2">작일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange3">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange3">1주일</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange4">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange4">1개월</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange5">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange5">3개월</label>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="radio" class="btn-check" name="dateRange" id="dateRange6">
+                                                                    <label class="btn btn-outline-secondary btn-sm w-100" for="dateRange6">6개월</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <script>
+                                                        $('.btn-date-range').on('click', function () {
+                                                            $(this).closest('.row').toggleClass('active');
+                                                        });
+                                                        $(document).on('mouseup', function (e) {
+                                                            e.preventDefault();
+                                                            if (
+                                                                $('.btn-date-range').has(e.target).length === 0 &&
+                                                                $('.date-layer').has(e.target).length === 0 &&
+                                                                $('.datepicker').has(e.target).length === 0
+                                                            ) {
+                                                                $('.btn-date-range').closest('.row').removeClass('active');
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto order-1">
+                                                <div class="selected-date-range">
+                                                    <span class="date">등록일 조회 기간 : 2022-04-24 ~ 2022-05-23</span>
+                                                    <button type="button" aria-label="삭제"><i class="icon-file-delete"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-body">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                        <div class="row align-items-center gx-3">
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="기준 조회 선택">
+                                                    <option selected>긴급 공지사항 전체</option>
+                                                    <option value="">긴급 공지사항만 보기</option>
+                                                    <option value="">긴급 공지사항 제외</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-auto">
+                                                <select class="form-select" aria-label="검색 범위 선택">
+                                                    <option selected>게시된 공지사항 전체</option>
+                                                    <option value="">게시된 공지사항만 보기</option>
+                                                    <option value="">게시된 공지사항 제외</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row gx-3">
+                                            <div class="col-auto">
+                                                <input type="text" class="form-control with-icon-search" placeholder="검색어 입력" style="width: 320px">
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <div class="box">
+                            <div class="table-wrap">
+                                <div class="table-top">
+                                    <div class="row align-items-center justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="table-title">등록된 공지사항 <span class="fw-normal">(24)</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 96px"><i class="icon-plus me-2"></i>추가</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-body">
+                                    ibsheet 영역
+                                    <div style="text-align: center">
+                                        <a href="#modal-notice-detail" data-bs-toggle="modal" class="me-3">공지사항 상세 정보</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- //실컨텐츠 -->
+
+            </main> <!-- main -->
+        </div>
+    </div>
+    @@include('@@webRoot/_include/_modal.html')
+</body>
+
+</html>

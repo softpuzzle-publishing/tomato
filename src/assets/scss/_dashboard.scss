@@ -34,18 +34,3 @@
         border:1px solid #D6DBE8;border-radius: 6px;padding: 1.25rem 1.5rem;
     }
 }
-.attachment{
-    background: #F2F4FA;border-radius: 6px;padding: 1rem 1.5rem;position: relative;margin-bottom: 1.25rem;
-    .save{color: $primary;text-decoration: underline;position: absolute;right: 1.25rem;top: 1rem;}
-    .size{color: #A0A0A0;flex: 0 0 auto;margin-left: .5rem;}
-    .file{
-        display: flex;align-items: center;margin-bottom: .5rem;
-        i{margin-right: .5rem;}
-        strong{color: $primary;margin-left: .5rem;}
-    }
-    .file-list{
-        li{display: flex;}
-        i{flex: 0 0 auto;margin-right: .5rem;}
-        a{color: $primary;text-decoration: underline;flex: 0 0 auto;max-width: 80%;word-break: break-all;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
-    }
-}
