@@ -10,6 +10,9 @@
         section {border-bottom: 1px solid #e8e8e8;flex: 0 0 50%;padding:1rem;}
         h1 {font-size: 1.5rem;color: #df1f1f;margin-bottom: .5rem;}
         p{font-size: 1rem;}
+        section > div > div{margin-bottom: 3px;}
+        section > div > div .form-select{margin-bottom: 2px;}
+        section > div > div .form-control{margin-bottom: 2px;}
     </style>
 </head>
 
@@ -68,6 +71,9 @@
                 <span class="badge bg-secondary">secondary</span>
                 <span class="badge bg-success">사용 가능</span>
                 <span class="badge bg-danger">사용 불가</span>
+                <span class="badge bg-warning">일시 중지</span>
+                <span class="badge badge-outline-primary">공지</span>
+                <span class="badge badge-outline-danger">긴급</span>
             </div>
         </section>
         <section>
@@ -144,7 +150,7 @@
                         <i class="icon-calendar"></i>
                     </div>
                 </div>
-                <div class="mb-2">
+                <div>
                     <select class="form-select" aria-label="Default select">
                         <option selected>선택하세요</option>
                         <option value="1">One</option>
@@ -152,7 +158,7 @@
                         <option value="3">Three</option>
                     </select>
                 </div>
-                <div class="mb-2">
+                <div>
                     <select class="form-select form-select-sm" aria-label="Default select">
                         <option selected>선택하세요</option>
                         <option value="1">One</option>

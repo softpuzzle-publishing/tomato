@@ -85,6 +85,13 @@
         background-image: url('../images/icon-file-download-white.svg');
     }
 }
+.icon-attachment{
+    width: 18px;height: 18px;background-image: url('../images/icon-attachment.svg');
+    .btn:not(.btn-white):active > &,
+    .btn:not(.btn-white):hover > &{
+        background-image: url('../images/icon-attachment-white.svg');
+    }
+}
 .icon-noimage{width: 47px;height: 47px; background-image: url('../images/icon-noimage.svg');}
 
 // icon in input
@@ -111,10 +118,5 @@
 .icon-reload{width: 36px;height: 36px;background-image: url('../images/icon-reload.svg');}
 .icon-calendar-lg{width: 36px;height: 35px; background-image: url('../images/icon-calendar-lg.svg');}
 
-.icon-attachment{width: 18px;height: 18px;background-image: url('../images/icon-attachment.svg');
-    *:not(.btn-white):active > &,
-    *:not(.btn-white):hover > &{
-        background-image: url('../images/icon-attachment-white.svg');
-    }
-}
+
 .icon-attachment-down{width: 18px;height: 18px;background-image: url('../images/icon-attachment-down.svg');}

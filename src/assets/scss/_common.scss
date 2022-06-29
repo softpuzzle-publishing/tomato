@@ -261,6 +261,10 @@ thead{
 
 .form-horizontal{
     label{width: 120px;margin-top: 7px;color: #A0A0A0;}
+    .row{
+        margin-left: -.5rem;margin-right: -.5rem;
+        > *{padding-left: .5rem;padding-right: .5rem;}
+    }
 }
 
 .thumbs{

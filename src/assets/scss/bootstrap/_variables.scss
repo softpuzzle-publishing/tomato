@@ -877,7 +877,7 @@ $input-font-size-lg:                    $input-btn-font-size-lg !default;
 $input-line-height-lg:                  $input-btn-line-height-lg !default;
 
 $input-bg:                              #f2f4fa !default;
-$input-disabled-bg:                     $gray-200 !default;
+$input-disabled-bg:                     $input-bg !default;
 $input-disabled-border-color:           null !default;
 
 $input-color:                           $body-color !default;
@@ -1421,7 +1421,7 @@ $badge-font-size:                   .85714em !default;
 $badge-font-weight:                 $font-weight-bold !default;
 $badge-color:                       $white !default;
 $badge-padding-y:                   .25em !default;
-$badge-padding-x:                   .5625rem !default;
+$badge-padding-x:                   .5rem !default;
 $badge-border-radius:               4px !default;
 // scss-docs-end badge-variables
 
