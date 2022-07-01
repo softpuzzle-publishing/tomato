@@ -138,6 +138,10 @@ a{text-decoration: none;}
     line-height: 1.6;font-size: 18px;font-weight: 500;color: #000;text-align: center;margin-top: 1.5rem;
     strong{font-size: 24px;}
 }
+.alert-password{
+    width: 280px; display: flex; align-items: center; justify-content: center;
+    font-weight: 400; font-size: 18px; color: #434AFA; margin: 40px auto 0; border: 1px solid #CFD4E1; border-radius: 6px; padding: 22px 0;
+}
 
 .form-error{
     background: $danger;margin-left: -1.5rem;margin-right: -1.5rem;text-align: center;
@@ -331,4 +335,7 @@ thead{
             }
         }
     }
+}
+.btn-on-off{
+    height: 32px; font-size: 14px; font-weight: 400;
 }
