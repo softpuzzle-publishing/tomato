@@ -31,6 +31,7 @@
     <!-- publishing js -->
     <script src="../assets/js/ui.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 
 <body>
@@ -162,20 +163,39 @@
                                 <div class="table-top">
                                     <div class="row align-items-center justify-content-between">
                                         <div class="col-auto">
-                                            <!-- <div class="datepicker-year me-3">2022년</div> -->
+                                            <!-- <input type="text" class="form-control with-icon-calendar" placeholder="2022" title="연도 선택" data-picker="year"> -->
+                                            <p class="txt-datepicker" data-picker="year">2022 <span class="icon-b-arrow"></span></p>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    $('.txt-datepicker').click(function() {
+                                                        $(this).toggleClass('active');
+
+                                                        if ($(this).hasClass('active')) {
+                                                            $('[data-picker="text-year"]').datepicker({
+                                                                todayBtn: true,
+                                                                autoclose: true,
+                                                                minViewMode: 2,
+                                                                maxViewMode: 2,
+                                                                format: 'yyyy'
+                                                            });
+                                                        } else {
+                                                            $('.datepicker').hide();
+                                                        }
+
+
+                                                    })
+
+                                                })
+                                            </script>
                                         </div>
-                                        <!-- <div class="col-auto">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
-                                        </div> -->
-                                        <script>
-                                            $(".datepicker-year").datepicker({
-                                                todayBtn: true,
-                                                autoclose: true,
-                                                minViewMode: 2,
-                                                maxViewMode: 2,
-                                                format: "yyyy",
-                                            });
-                                        </script>
+                                        <div class="col-auto">
+                                            <div class="btn-group d-flex">
+                                                <input type="radio" class="btn-check" name="options2" id="table" checked="checked">
+                                                <label class="btn btn-outline-secondary flex-1 btn-on-off" for="table">테이블</label>
+                                                <input type="radio" class="btn-check" name="options2" id="graph">
+                                                <label class="btn btn-outline-secondary flex-1 btn-on-off" for="graph">그래프</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="table-body">
@@ -258,33 +278,60 @@
                                             <script>
                                                 var chartArea = document.getElementById('myChart').getContext('2d');
                                                 var myChart = new Chart(chartArea, {
-                                                    // ①차트의 종류(String)
                                                     type: 'bar',
-                                                    // ②차트의 데이터(Object)
                                                     data: {
-                                                        // ③x축에 들어갈 이름들(Array)
                                                         labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-                                                        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
                                                         datasets: [{
-                                                            // ⑥dataset값(Array)
-                                                            data: [140],
-                                                            // ⑦dataset의 배경색(rgba값을 String으로 표현)
+                                                            data: [65, 59, 80, 81, 56, 55, 40, 100, 150, 160, 180, 30],
                                                             backgroundColor: '#434AFA',
-                                                            barPercentage: 0.5,
+                                                            barPercentage: 0.4,
                                                         }]
                                                     },
-
-                                                    // ⑩차트의 설정(Object)
                                                     options: {
-                                                        // ⑪축에 관한 설정(Object)
+                                                        tooltips: {
+                                                            enabled: false
+                                                        },
+                                                        // responsive: true,
+                                                        plugins: {
+                                                            legend: {
+                                                                display: false,
+                                                            },
+                                                        },
                                                         indexAxis: 'y',
                                                         scales: {
-                                                            // ⑫y축에 대한 설정(Object)
-                                                            y: {
-                                                                // ⑬시작을 0부터 하게끔 설정(최소값이 0보다 크더라도)(boolean)
-                                                                beginAtZero: true
-                                                            }
-                                                        }
+                                                            x: [{
+                                                                ticks: {
+                                                                    beginAtZero: true,
+                                                                    display: false,
+                                                                    beginAtZero: true,
+                                                                    max: 200, //**젤 높은 data값 + 10 넣어줄것!!
+                                                                    font: {
+                                                                        size: 10,
+                                                                    }
+                                                                },
+                                                                gridLines: {
+                                                                    // display: false,
+                                                                    drawTicks: false
+                                                                }
+                                                            }],
+                                                            y: [{
+                                                                ticks: {
+                                                                    beginAtZero: true,
+                                                                    // display: false
+                                                                    stepSize: 100,
+                                                                    font: {
+                                                                        size: 12,
+                                                                    }
+                                                                },
+                                                                gridLines: {
+                                                                    display: false,
+                                                                    lineWidth: 3
+                                                                    // drawTicks: false
+                                                                },
+
+
+                                                            }]
+                                                        },
                                                     }
                                                 });
                                             </script>

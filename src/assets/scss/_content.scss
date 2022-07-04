@@ -98,7 +98,12 @@
 .join-content__not{
     width:100%; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); font-weight: 500; font-size: 18px; line-height: 26px; text-align: center; color: #9C9FA9;
 }
-.chart-wrap{
-    width: 340px !important; height: 100%;
-    canvas{ height: 100% !important;}
+
+.txt-datepicker{
+    font-weight: 400; font-size: 36px; line-height: 52px; color: #3C3C3C; cursor: pointer;
+    .icon-b-arrow{ margin-left: 25px;}
+    &.active{color: #434AFA;
+        .icon-b-arrow{background-image: url('../images/icon-active-arrow.svg');}
+    }
 }
+#myChart{width:360px !important; height:500px !important;}
