@@ -29,26 +29,48 @@ let Aside = {
         this.lnb();
     },
     lnb: function () {
-        //페이지 타이틀명과 비교하여 활성화
-        if ($("h1.visually-hidden").length > 0) {
-            let $sidebarNav = $('.sidebar-nav');
+        const url = window.location.pathname;
+        $('.dep2 > li > a').each(function () {
+            if ($(this).attr("href").includes(url)) {
+                $(this).closest("li").addClass("active");
+                if ($(this).closest(".dep1").hasClass("has-treeview")) {
+                    $(this).closest(".dep1").addClass("active");
+                    $(this).closest(".dep1").find("ul").clone().appendTo(".lnb");
+                } else {
+                    $(".lnb").remove();
+                }
+            } else {
+                $('.dep1 > a').each(function () {
+                    if ($(this).attr("href").includes(url)) {
+                        $(this).closest("li").addClass("active");
+                    }
+                });
+            }
+        })
+
+        /* if ($("h1.visually-hidden").length > 0) {
+            let $sidebarNav = $(".sidebar-nav");
             let title = $("h1.visually-hidden").text();
             let $active = "";
             if ($sidebarNav.length > 0) {
-                $sidebarNav.find('span').each(function () {
+                $sidebarNav.find("span").each(function () {
                     if ($(this).text() === title) {
                         $active = $(this);
                         $active.closest("li").addClass("active");
                         if ($active.closest(".dep1").hasClass("has-treeview")) {
                             $active.closest(".dep1").addClass("active");
-                            $active.closest(".dep1").find("ul").clone().appendTo(".lnb");
+                            $active
+                                .closest(".dep1")
+                                .find("ul")
+                                .clone()
+                                .appendTo(".lnb");
                         } else {
-                            $('.lnb').remove();
+                            $(".lnb").remove();
                         }
                     }
                 });
             }
-        }
+        } */
     }
 }
 
