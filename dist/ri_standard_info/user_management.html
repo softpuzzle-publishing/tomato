@@ -137,9 +137,9 @@
                             </a>
                             <ul>
                                 <li><a href="../ri_statistics/supplier_connect.html"><span>공급사 연결 현황</span></a></li>
-                                <li><a href="../ri_statistics/scm-uses.html"><span>SCM 활용 현황</span></a></li>
+                                <li><a href="../ri_statistics/scm_uses.html"><span>SCM 활용 현황</span></a></li>
                                 <li><a href="../ri_statistics/customer_purchase.html"><span>고객사 매입 현황</span></a></li>
-                                <li><a href=""><span>공급사 가입 현황</span></a></li>
+                                <li><a href="../ri_statistics/supplier_join.html"><span>공급사 가입 현황</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -161,16 +161,18 @@
                                     <div class="col">
                                         <div class="filter-title">상세 조회</div>
                                     </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-refrash me-2"></i>초기화</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="filter-body">
                                 <div class="row justify-content-between">
-                                    <div class="col-2">
-                                        <select class="form-select" aria-label="Default select">
-                                            <option selected="">선택하세요</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                    <div class="col-auto">
+                                        <select class="form-select w-auto" aria-label="사용 여부 선택">
+                                            <option selected="">사용 여부 전체</option>
+                                            <option value="">사용</option>
+                                            <option value="">미사용</option>
                                         </select>
                                     </div>
                                     <div class="col-auto">
@@ -211,7 +213,7 @@
                                         <div class="table-body">
                                             <!-- data empty -->
                                             <!-- <div class="d-flex h-100 align-items-center justify-content-center">
-                                                <p class="data-empty">등록된 공급사 목록이 존재하지 않습니다.</p>
+                                                <p class="data-empty">사용자 목록에서 대상을 선택해주세요.</p>
                                             </div> -->
                                             <table class="table table-striped">
                                                 <thead class="table-dark">
@@ -248,7 +250,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-8 overflow-y-auto">
+                                <div class="col-8">
                                     <div class="table-wrap">
                                         <div class="table-top">
                                             <div class="row align-items-center justify-content-between">
@@ -259,9 +261,9 @@
                                         </div>
                                         <div class="table-body">
                                             <div class="d-flex flex-column h-100">
-                                                <div class="form-horizontal row pb-5">
+                                                <div class="form-horizontal row mb-2">
                                                     <div class="col-4">
-                                                        <div class="row mb-2">
+                                                        <div class="row gx-3">
                                                             <label for="" class="col-auto text-end">사용자 명</label>
                                                             <div class="col">
                                                                 <input type="text" class="form-control form-control-sm" value="신역삼">
@@ -269,7 +271,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <div class="row">
+                                                        <div class="row gx-3">
                                                             <label for="" class="col-auto text-end">휴대폰 연락처(ID)</label>
                                                             <div class="col">
                                                                 <input type="text" class="form-control form-control-sm" value="010-9876-5432">
@@ -277,7 +279,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <div class="row mb-2">
+                                                        <div class="row gx-3">
                                                             <label for="" class="col-auto text-end">공급사 명</label>
                                                             <div class="col">
                                                                 <input type="text" class="form-control form-control-sm" value="바나나물산">
@@ -287,7 +289,7 @@
                                                 </div>
                                                 <div class="form-horizontal row pb-5">
                                                     <div class="col-4">
-                                                        <div class="row">
+                                                        <div class="row gx-3">
                                                             <label for="" class="col-auto text-end">입권한 그룹</label>
                                                             <div class="col">
                                                                 <select class="form-select form-select-sm" aria-label="Default select">
@@ -299,15 +301,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-auto">
-                                                        <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="row gx-3">
                                                             <label for="" class="form-label text-end">사용 여부</label>
                                                             <div class="col">
                                                                 <div class="btn-group d-flex">
-                                                                    <input type="radio" class="btn-check" name="options2" id="appUnapplied2" checked>
-                                                                    <label class="btn btn-outline-secondary flex-1 btn-on-off  mt-0" for="appUnapplied2">미적용</label>
-                                                                    <input type="radio" class="btn-check" name="options3" id="appApply2">
-                                                                    <label class="btn btn-outline-secondary flex-1 btn-on-off  mt-0" for="appApply2">적용</label>
+                                                                    <input type="radio" class="btn-check" name="riUserUse" id="riUserUseY" checked>
+                                                                    <label class="btn btn-sm btn-outline-secondary flex-1" for="riUserUseY">사용</label>
+                                                                    <input type="radio" class="btn-check" name="riUserUse" id="riUserUseN">
+                                                                    <label class="btn btn-sm btn-outline-secondary flex-1" for="riUserUseN">미사용</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -315,7 +317,7 @@
                                                 </div>
                                                 <div class="form-horizontal row pb-5 pt-5 border-top">
                                                     <div class="col-4">
-                                                        <div class="row mb-2">
+                                                        <div class="row gx-3 mb-2">
                                                             <label for="" class="col-auto text-end">비밀번호 초기화</label>
                                                             <div class="col">
                                                                 <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 130px" data-bs-toggle="modal" data-bs-target="#alert-pw-reset">비밀번호 초기화</button>
@@ -323,7 +325,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <div class="row">
+                                                        <div class="row gx-3">
                                                             <label for="" class="col-auto text-end">초기화 요청일</label>
                                                             <div class="col">
                                                                 <input type="text" class="form-control form-control-sm" value="2022-06-27  11:23:49" readonly>
@@ -331,7 +333,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <div class="row mb-2">
+                                                        <div class="row gx-3 mb-2">
                                                             <label for="" class="col-auto text-end">최근 로그인</label>
                                                             <div class="col">
                                                                 <input type="text" class="form-control form-control-sm" value="2022-06-28  17:05:22" readonly>
@@ -341,34 +343,29 @@
                                                 </div>
                                                 <div class="frame flex-grow-1">
                                                     <!-- <div class="d-flex h-100 align-items-center justify-content-center">
-                                                        <p class="data-empty">공급 발주 집계 목록에서 대상을 선택해주세요.</p>
+                                                        <p class="data-empty">사용자 목록에서 대상을 선택해주세요.</p>
                                                     </div> -->
-                                                    <div class="col">
-                                                        <div class="row mb-2">
-                                                            <label for="" class="col-auto text-end">관리 메모</label>
-                                                            <div class="col">
-                                                                <textarea name="" id="" cols="30" rows="10" class="form-control">맥클라렌은 1999년 초반에 맨유 수석 코치로 부임했다. 맥클라렌 코치는 퍼거슨 감독의 오른팔 역할을 성공적으로 수행했고, 맨유는 1998-99시즌에 구단 역사상 최초로 트레블을 달성했다.</textarea>
-                                                            </div>
+                                                    <div class="form-horizontal row gx-3">
+                                                        <label for="" class="col-auto text-end" style="width: 95px">관리 메모</label>
+                                                        <div class="col">
+                                                            <textarea class="form-control form-control-sm" style="height: 85px">맥클라렌은 1999년 초반에 맨유 수석 코치로 부임했다. 맥클라렌 코치는 퍼거슨 감독의 오른팔 역할을 성공적으로 수행했고, 맨유는 1998-99시즌에 구단 역사상 최초로 트레블을다.</textarea>
                                                         </div>
-                                                        <div class="row justify-content-end">
-                                                            <div class="col-auto d-flex gx-3">
-                                                                <p class="editor">작성자</p>
-                                                                <p>홍길동</p>
-                                                            </div>
-                                                            <div class="col-auto d-flex">
-                                                                <p class="editor">작성일</p>
-                                                                <p>2022-06-29 11:23:57</p>
-                                                            </div>
-                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-end mt-4">
+                                                        <span class="text-secondary">작성자</span>
+                                                        <span class="ms-2">홍길동</span>
+                                                        <i class="icon-bar mx-3"></i>
+                                                        <span class="text-secondary">작성일</span>
+                                                        <span class="ms-2">2022-06-29 11:23:57</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="table-bottom">
-                                        <div class="row justify-content-end">
-                                            <div class="col-auto">
-                                                <button type="button" class="btn btn-primary" style="width: 120px">접수</button>
+                                        <div class="table-bottom">
+                                            <div class="row justify-content-end">
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-primary" style="width: 120px">접수</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -756,19 +753,19 @@
                 <div class="modal-body">
                     <div class="form-horizontal row">
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">고객사명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="바나나마트">
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">고객사 코드</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="48631">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto4 text-end">대표자 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="이호웅">
@@ -776,19 +773,19 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">사업자 번호</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="528-87-01416">
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">거래 상태</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="운영 중">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">고객사 상태</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="거래 중">
@@ -796,7 +793,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2 h-100">
+                            <div class="row gx-3 mb-2 h-100">
                                 <label for="" class="col-auto text-end">주소</label>
                                 <div class="col">
                                     <textarea class="form-control form-control-sm h-100">경기 용인시 기흥구 마북로 132</textarea>
@@ -805,7 +802,7 @@
                         </div>
                     </div>
                     <div class="border-top mt-5 py-5">
-                        <div class="form-horizontal row">
+                        <div class="form-horizontal row gx-3">
                             <label for="" class="col-auto text-end">관리 메모</label>
                             <div class="col">
                                 <textarea class="form-control form-control-sm" style="height: 85px">맥클라렌은 1999년 초반에 맨유 수석 코치로 부임했다. 맥클라렌 코치는 퍼거슨 감독의 오른팔 역할을 성공적으로 수행했고, 맨유는 1998-99시즌에 구단 역사상 최초로 트레블을 달성했
@@ -877,7 +874,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                             <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
@@ -916,19 +913,19 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">상품 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="매운 블랙 신라면">
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">규격</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="230g">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto4 text-end">단위</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="ea">
@@ -936,19 +933,19 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">상품 코드</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="880 6533 742132">
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">입수</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="236">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">면과세 구분</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="과세">
@@ -992,7 +989,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                             <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
@@ -1023,7 +1020,7 @@
                 <div class="modal-body">
                     <div class="form-horizontal row">
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">고객사 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="바나나마트">
@@ -1031,7 +1028,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">고객사 코드</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="48631">
@@ -1039,7 +1036,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">매출 조회 기간</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="2021 ~ 2022">
@@ -1068,7 +1065,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                         </div>
@@ -1116,7 +1113,7 @@
                 <div class="modal-body">
                     <div class="form-horizontal row">
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">납품 예정 일자</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="2022-06-27">
@@ -1124,7 +1121,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">상품 코드</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="8801007375670">
@@ -1132,7 +1129,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">상품</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="CJ 밀당의 고수 김말이">
@@ -1175,7 +1172,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                             <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
@@ -1206,13 +1203,13 @@
                 <div class="modal-body">
                     <div class="form-horizontal row">
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">고객사 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="바나나마트">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">납품 예정 일자</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="2022-06-27">
@@ -1220,13 +1217,13 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">전표 번호</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="1">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">전표 상태</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="접수 확정">
@@ -1234,7 +1231,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">전표 번호</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="1">
@@ -1260,7 +1257,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                         </div>
@@ -1306,7 +1303,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                         </div>
@@ -1413,7 +1410,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row gx-5 mb-5">
+                                    <div class="row gx-5">
                                         <div class="col-6">
                                             <label for="" class="form-label">원산지</label>
                                             <select class="form-select">
@@ -1460,7 +1457,7 @@
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                    <div class="mb-5">
+                                    <div>
                                         <label for="" class="form-label">할인 단가 / 할인율</label>
                                         <select class="form-select">
                                             <option selected="">1,930 / 22.5%</option>
@@ -1557,7 +1554,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row gx-5 mb-5">
+                                    <div class="row gx-5">
                                         <div class="col">
                                             <label for="" class="form-label">APP 판매 단가</label>
                                             <select class="form-select">
@@ -1704,7 +1701,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row gx-5 mb-5">
+                                    <div class="row gx-5">
                                         <div class="col-6">
                                             <label for="" class="form-label">공지사항 게시 여부</label>
                                             <div class="btn-group d-flex">
@@ -1767,7 +1764,7 @@
                                             <div class="text-end mb-4">
                                                 <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-attachment me-1"></i>파일 첨부</button>
                                             </div>
-                                            <div class="attachment">
+                                            <div class="attachment mb-0">
                                                 <!-- <p class="data-empty">첨부된 파일이 존재하지 않습니다.</p> -->
                                                 <div class="file">
                                                     <i class="icon-attachment"></i>
@@ -1828,25 +1825,25 @@
                 <div class="modal-body">
                     <div class="form-horizontal row">
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">공급사 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="공급사ABCD" readonly>
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">공급사 코드</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="2022312001" readonly>
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto4 text-end">대표자 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="강강남" readonly>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto4 text-end">가입일</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="2022-06-29" readonly>
@@ -1854,25 +1851,25 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">사업자 번호</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="528-87-01416" readonly>
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">주요 취급 품목</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="야채, 청과" readonly>
                                 </div>
                             </div>
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">업태</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="도소매업" readonly>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gx-3">
                                 <label for="" class="col-auto text-end">업종</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="공급유통업" readonly>
@@ -1880,7 +1877,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row mb-2 h-100">
+                            <div class="row gx-3 mb-2 h-100">
                                 <label for="" class="col-auto text-end">주소</label>
                                 <div class="col">
                                     <textarea class="form-control form-control-sm h-100">경기 용인시 기흥구 마북로 132</textarea>
@@ -1891,13 +1888,13 @@
                     <div class="border-top mt-5 py-5">
                         <div class="form-horizontal row">
                             <div class="col">
-                                <div class="row mb-2">
+                                <div class="row gx-3 mb-2">
                                     <label for="" class="col-auto text-end">담당자</label>
                                     <div class="col">
                                         <input type="text" class="form-control form-control-sm" value="공급사ABCD">
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row gx-3">
                                     <label for="" class="col-auto text-end">연락처</label>
                                     <div class="col">
                                         <input type="text" class="form-control form-control-sm" value="2022312001" readonly>
@@ -1905,16 +1902,37 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="row mb-2">
+                                <div class="row gx-3 mb-2">
                                     <label for="" class="col-auto text-end">서비스 상태 설정</label>
                                     <div class="col">
+                                        <div class="btn-group d-flex">
+                                            <input type="radio" class="btn-check" name="serviceStatus" id="serviceStatusIng" checked="">
+                                            <label class="btn btn-sm btn-success flex-1" for="serviceStatusIng">사용 중</label>
+                                            <input type="radio" class="btn-check" name="serviceStatus" id="serviceStatusPause">
+                                            <label class="btn btn-sm btn-warning flex-1" for="serviceStatusPause">일시 중지</label>
+                                            <input type="radio" class="btn-check" name="serviceStatus" id="serviceStatusStop">
+                                            <label class="btn btn-sm btn-danger flex-1" for="serviceStatusStop">사용 중지</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row gx-3">
+                                    <label for="" class="col-auto text-end">서비스 해지 설정</label>
+                                    <div class="col">
+                                        <div class="row gx-0 align-items-center" style="min-height: 36px">
+                                            <div class="col">
+                                                <p class="text-danger">사용 중지 상태에서 서비스 해지 가능</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="form-check form-switch m-0">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="row mb-2 h-100">
+                                <div class="row gx-3 mb-2 h-100">
                                     <label for="" class="col-auto text-end">사유</label>
                                     <div class="col">
                                         <textarea class="form-control form-control-sm h-100">내부 공사로 인한 업무 일시 중지 상태
@@ -1924,8 +1942,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border-top mt-5 py-5">
-                        <div class="form-horizontal row">
+                    <div class="border-top py-5">
+                        <div class="form-horizontal row gx-3">
                             <label for="" class="col-auto text-end">관리 메모</label>
                             <div class="col">
                                 <textarea class="form-control form-control-sm" style="height: 85px">맥클라렌은 1999년 초반에 맨유 수석 코치로 부임했다. 맥클라렌 코치는 퍼거슨 감독의 오른팔 역할을 성공적으로 수행했고, 맨유는 1998-99시즌에 구단 역사상 최초로 트레블을 달성했
@@ -1947,49 +1965,41 @@
                         </div>
                     </div>
                     <div class="bg-in-modal mx-n5">
-                        <div class="box">
-                            <div class="table-wrap">
-                                <div class="table-top">
-                                    <div class="row align-items-center justify-content-between">
-                                        <div class="col-auto">
-                                            <div class="table-title">납품 내역납품 내역 <span class="fw-normal">(최근 납품 내역)</span></div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="box">
+                                    <div class="table-wrap">
+                                        <div class="table-top">
+                                            <div class="row align-items-center justify-content-between">
+                                                <div class="col-auto">
+                                                    <div class="table-title">연결 고객사 수 <span class="fw-normal">(32)</span></div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <span class="text-danger">* 부가세 포함</span>
+                                        <div class="table-body" style="height: 150px">
+                                            <div>ibsheet 영역</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="table-body" style="height: 220px">
-                                    <div>ibsheet 영역</div>
-                                    <div style="text-align: right">
-                                        <div class="position-relative d-inline-block">
-                                            <button type="button" class="btn btn-outline-primary btn-xs btn-memo-view"><i class="icon-memo me-2"></i>메모 내용 보기</button>
-                                            <script>
-                                                $('.btn-memo-view').on('click', function() {
-                                                    $(this).toggleClass('active');
-                                                });
-                                                $(document).on('mouseup', function(e) {
-                                                    e.preventDefault();
-                                                    if ($('.btn-memo-view').has(e.target).length === 0 && $('.memo-tooltip').has(e.target).length === 0) {
-                                                        $('.btn-memo-view').removeClass('active');
-                                                    }
-                                                });
-                                            </script>
-                                            <div class="memo-tooltip">
-                                                <div class="row form-horizontal">
-                                                    <label for="" class="col-auto w-auto">관리 메모</label>
-                                                    <div class="col">
-                                                        <textarea rows="4" class="form-control form-control-sm">발주 확인</textarea>
-                                                    </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="box">
+                                    <div class="table-wrap">
+                                        <div class="table-top">
+                                            <div class="row align-items-center justify-content-between">
+                                                <div class="col-auto">
+                                                    <div class="table-title">상품 <span class="fw-normal">(32)</span></div>
                                                 </div>
-                                                <div class="d-flex align-items-center justify-content-end mt-3">
-                                                    <span class="text-secondary">작성자</span>
-                                                    <span class="ms-2">홍길동</span>
-                                                    <i class="icon-bar mx-3"></i>
-                                                    <span class="text-secondary">작성일</span>
-                                                    <span class="ms-2">2022-06-29 11:23:57</span>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="table-body" style="height: 150px">
+                                            <div>ibsheet 영역</div>
                                         </div>
                                     </div>
                                 </div>
@@ -1997,7 +2007,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-between">
                         <div class="col-auto">
                             <button type="button" class="btn btn-outline-secondary px-6">삭제</button>
@@ -2017,6 +2027,7 @@
             </div>
         </div>
     </div>
+
     <!-- alert : 비밀번호 초기화 -->
     <div class="modal" id="alert-pw-reset" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -2024,10 +2035,10 @@
                 <div class="modal-body">
                     <div class="alert-message">
                         비밀번호 초기화를 진행할 경우<br>
-                        사용자의 휴대폰 연락처로 임시 비밀번호가 전송됩니다.<br>
+                        사용자의 휴대폰 연락처로 <span class="text-underline">임시 비밀번호</span>가 전송됩니다.<br>
                         초기화를 진행하시겠습니까?
                     </div>
-                    <div class="alert-password">
+                    <div class="mobile-number-box">
                         010-9876-5432
                     </div>
                 </div>
@@ -2055,7 +2066,7 @@
                 <div class="modal-body">
                     <div class="form-horizontal row">
                         <div class="col-4">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">고객사 코드</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="00123">
@@ -2063,7 +2074,7 @@
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="row mb-2">
+                            <div class="row gx-3 mb-2">
                                 <label for="" class="col-auto text-end">고객사 명</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="우리마트 강남점">
@@ -2123,7 +2134,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-n5 border-top-0">
                     <div class="row gx-3 justify-content-end">
                         <div class="col-auto">
                             <div class="row gx-3">

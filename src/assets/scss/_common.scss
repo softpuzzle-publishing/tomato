@@ -48,6 +48,8 @@ textarea{ resize: none;}
 
 a{text-decoration: none;}
 
+.text-underline{text-decoration: underline;}
+
 // circle checkbox
 .form-check{
     &.form-check-circle{
@@ -70,11 +72,21 @@ a{text-decoration: none;}
 
 .flex-1{flex: 1 !important;}
 .btn-group{
-    .btn-check:not(:checked) + .btn{background: $input-bg;border-color: $input-bg;color: #a0a0a0;}
+    label.btn{margin: 0;}
+    .btn-check:not(:checked) + .btn:not(.btn-outline-secondary){background: $input-bg;border-color: $input-bg;color: #a0a0a0;}
     .btn-check:checked{
-        & + .btn{font-weight: 700;}
+        & + .btn{font-weight: 500;}
         & + .btn-success{background: $success;border-color: $success;}
         & + .btn-danger{background: $danger;border-color: $danger;}
+        & + .btn-warning{background: $warning;border-color: $warning;}
+        & + .btn-outline-secondary{background: rgba(67, 74, 250, .1);border-color: $primary;color: $primary;}
+    }
+    &.d-flex{
+        .btn{padding-left: .25rem;padding-right: .25rem;}
+    }
+    .btn-outline-secondary{
+        border-color: #A0A0A0;color: $dark;
+        &:hover{background-color: #fff;color: $dark;}
     }
 }
 
@@ -137,10 +149,6 @@ a{text-decoration: none;}
 .alert-message{
     line-height: 1.6;font-size: 18px;font-weight: 500;color: #000;text-align: center;margin-top: 1.5rem;
     strong{font-size: 24px;}
-}
-.alert-password{
-    width: 280px; display: flex; align-items: center; justify-content: center;
-    font-weight: 400; font-size: 18px; color: #434AFA; margin: 40px auto 0; border: 1px solid #CFD4E1; border-radius: 6px; padding: 22px 0;
 }
 
 .form-error{
@@ -213,6 +221,7 @@ thead{
             padding-left: $form-switch-width;
             .form-check-input{float: none;margin-left: -$form-switch-width;}
         }
+        label{width: auto;}
     }
 }
 
@@ -265,10 +274,6 @@ thead{
 
 .form-horizontal{
     label{width: 120px;margin-top: 7px;color: #A0A0A0;}
-    .row{
-        margin-left: -.5rem;margin-right: -.5rem;
-        > *{padding-left: .5rem;padding-right: .5rem;}
-    }
 }
 
 .thumbs{

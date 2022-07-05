@@ -8,6 +8,7 @@
 
     > * {
       @include make-col-ready();
+      min-width: 0;
     }
   }
 }

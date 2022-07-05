@@ -81,29 +81,39 @@
 
 .editor{color: #a0a0a0; margin-right: 8px;}
 
+.mobile-number-box{
+    width: 280px; display: flex; align-items: center; justify-content: center;
+    font-weight: 400; font-size: 18px; color: $primary; margin: 40px auto 20px; border: 1px solid #CFD4E1; border-radius: 6px; padding: 20px 0;
+}
+
 // RI통계/분석
 .join-content__box{
     height: 100%; border: 1px solid #CFD4E1; border-radius: 12px; padding: 22px 24px; position: relative;
 }
-.total-box{
-    width: 90%; border: 1px solid #434AFA; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16); border-radius: 6px; padding: 16px 66px 16px 52px; margin-top: 16px; display: flex; align-items: center; justify-content: space-between; 
-    position: absolute; bottom: 22px; left:50%; transform: translateX(-50%);
-    .total-box__txt{
-        font-weight: 400; font-size: 18px; line-height: 26px; color: #3C3C3C;
-    }
-    .total-box__cnt{
-        font-weight: 700; font-size: 24px; line-height: 30px; color: #434AFA;
-    }
+.supplier-join-sum{
+    border: 1px solid $primary; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16); border-radius: 6px; padding: 1rem 0;margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;text-align: center;
+    dt{flex: 1 1 50%;font-weight: 400; font-size: 18px; line-height: 26px;}
+    dd{flex: 1 1 50%;font-weight: 700; font-size: 24px; line-height: 30px; color: $primary;}
 }
 .join-content__not{
     width:100%; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); font-weight: 500; font-size: 18px; line-height: 26px; text-align: center; color: #9C9FA9;
 }
 
-.txt-datepicker{
-    font-weight: 400; font-size: 36px; line-height: 52px; color: #3C3C3C; cursor: pointer;
-    .icon-b-arrow{ margin-left: 25px;}
-    &.active{color: #434AFA;
-        .icon-b-arrow{background-image: url('../images/icon-active-arrow.svg');}
-    }
+.chart-wrap{
+    height: 100%;
+    canvas{width: 100%;height: 100%;}
 }
-#myChart{width:360px !important; height:500px !important;}
+
+.year-select{
+    width: 165px;position: relative;display: flex;align-items: center;cursor:pointer;
+    .form-control{
+        font-size: 36px;padding: 0;background: transparent;border: 0;color: #000 !important;cursor:pointer;width: 100%;position: relative;z-index: 1;
+        &:focus{
+            color: $primary !important;
+            ~ span{color: $primary;}
+            ~ .icon-arrow-down-lg{background-image: url('../images/icon-arrow-down-lg-active.svg');}
+        }
+    }
+    span{font-size: 36px;color: #000;position: absolute;right: 42px;top: 50%;transform: translateY(-50%);}
+    .icon-arrow-down-lg{position: absolute;right: 0;top: 50%;margin-top: -5px;}
+}
