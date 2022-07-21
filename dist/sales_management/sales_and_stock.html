@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
 
     <!-- publilshing css -->
+    <link rel="stylesheet" href="../assets/css/tomato.b2b.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
@@ -492,6 +493,32 @@
         </div>
     </div>
 
+    <!-- modal : 이미지 미리보기 -->
+    <div class="modal" id="modal-img-preview" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 1200px;">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">이미지 미리보기</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img src="../assets/images/@landscape.jpg" alt="">
+                    </div>
+                </div>
+                <div class="modal-footer mt-n5 border-top-0">
+                    <div class="row gx-3 justify-content-between">
+                        <div class="col-auto">
+
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- modal : 사용자 정보 등록 -->
     <div class="modal" id="modal-new-user" tabindex="-1" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
@@ -512,6 +539,22 @@
                             </div>
                             <div class="col-auto">
                                 <button type="button" class="btn btn-outline-primary">중복 체크</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary">인증번호요청</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-4">
+                        <div class="col">
+                            <label for="certificationNum" class="form-label">인증번호<strong class="required">필수입력</strong></label>
+                            <div class="row gx-3">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="certificationNum">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-primary">확인</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -548,7 +591,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row gx-5">
+                    <div class="row gx-5 mb-5">
                         <div class="col">
                             <label for="userPw" class="form-label">담당 업무</label>
                             <input type="password" class="form-control" id="userPw">
@@ -560,6 +603,15 @@
                                 <label class="btn btn-success px-0" for="option1">사용 가능</label>
                                 <input type="radio" class="btn-check" name="options" id="option2">
                                 <label class="btn btn-danger px-0" for="option2">사용 불가</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col">
+                            <label for="userAgree" class="form-label">개인정보 약관 동의</label>
+                            <div class="form-check form-switch form-check-inline ms-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="userAgree">
+                                <label class="form-check-label" for="userAgree"></label>
                             </div>
                         </div>
                     </div>
@@ -580,7 +632,7 @@
 
     <!-- modal : 사용자 정보 상세 -->
     <div class="modal" id="modal-user-detail" tabindex="-1" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">사용자 정보</h5>
@@ -594,6 +646,9 @@
                             </div>
                             <div class="col-auto">
                                 <button type="button" class="btn btn-outline-primary">중복 체크</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-primary">인증번호요청</button>
                             </div>
                         </div>
                     </div>
@@ -642,6 +697,15 @@
                                 <label class="btn btn-success px-0" for="option2-1">사용 가능</label>
                                 <input type="radio" class="btn-check" name="options2" id="option2-2" checked>
                                 <label class="btn btn-danger px-0" for="option2-2">사용 불가</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5 mb-5">
+                        <div class="col">
+                            <label for="userAgree" class="form-label">개인정보 약관 동의</label>
+                            <div class="form-check form-switch form-check-inline ms-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="userAgree2" checked>
+                                <label class="form-check-label" for="userAgree2"></label>
                             </div>
                         </div>
                     </div>
@@ -836,7 +900,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-horizontal row">
-                        <div class="col-auto">
+                        <div class="col-2">
                             <div class="thumbs">
                                 <!-- 이미지 없을때 -->
                                 <i class="icon-noimage"></i>
@@ -881,6 +945,16 @@
                                 <label for="" class="col-auto text-end">면과세 구분</label>
                                 <div class="col">
                                     <input type="text" class="form-control form-control-sm" value="과세">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal row mt-2">
+                        <div class="col offset-2">
+                            <div class="row gx-3 mb-2">
+                                <label for="" class="col-auto text-end">상품 주석</label>
+                                <div class="col">
+                                    <textarea name="" id="" cols="" rows="3" class="form-control form-control-sm"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -992,6 +1066,93 @@
                                 </div>
                                 <div class="table-body" style="height: 220px">
                                     <div>ibsheet 영역</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mt-n5 border-top-0">
+                    <div class="row gx-3 justify-content-between">
+                        <div class="col-auto">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row gx-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 120px">닫기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal : 상품 분류 검색 -->
+    <div class="modal" id="modal-product-classfication" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 1000px">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">상품 분류 검색</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="btn-group">
+                                <input type="radio" class="btn-check" name="classfication" id="classficationLg" checked>
+                                <label class="btn btn-outline-secondary" for="classficationLg">대분류</label>
+                                <input type="radio" class="btn-check" name="classfication" id="classficationMd">
+                                <label class="btn btn-outline-secondary" for="classficationMd">중분류</label>
+                                <input type="radio" class="btn-check" name="classfication" id="classficationSm">
+                                <label class="btn btn-outline-secondary" for="classficationSm">소분류</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="row gx-3 align-items-center">
+                                <div class="col-auto">
+                                    <div class="form-set">
+                                        <select class="form-select w-auto" aria-label="검색 범위 선택">
+                                            <option selected="">전체</option>
+                                        </select>
+                                        <input type="text" class="form-control with-icon-search" placeholder="분류 또는 분류코드 입력" style="width: 280px">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-outline-primary" style="width: 160px">조회</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-in-modal mx-n5 mt-5">
+                        <div class="row gx-3">
+                            <div class="col">
+                                <div class="box">
+                                    <div class="table-wrap">
+                                        <div class="table-top">
+                                            <div class="table-title">분류검색</div>
+                                        </div>
+                                        <div class="table-body" style="height: 400px">
+                                            <div>ibsheet 영역</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="d-flex flex-column justify-content-center h-100">
+                                    <button class="btn btn-secondary px-3"><i class="material-icons">arrow_forward_ios</i></button>
+                                    <button class="btn btn-secondary px-3 mt-3"><i class="material-icons">arrow_back_ios_new</i></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="box">
+                                    <div class="table-wrap">
+                                        <div class="table-top">
+                                            <div class="table-title">검색 분류</div>
+                                        </div>
+                                        <div class="table-body" style="height: 400px">
+                                            <div>ibsheet 영역</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1280,7 +1441,7 @@
 
     <!-- modal : 상품 관리 상세 -->
     <div class="modal" id="modal-fee-product-detail" tabindex="-1" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 1440px">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 1440px">
             <div class="modal-content">
                 <div class="modal-header bg-dark">
                     <h5 class="modal-title">상품 관리 상세</h5>
@@ -1420,41 +1581,54 @@
                                         <div class="col">
                                             <label for="" class="form-label">상품 품절 설정</label>
                                             <div class="btn-group d-flex">
-                                                <input type="radio" class="btn-check" name="options2" id="itemSoldout" checked>
+                                                <input type="radio" class="btn-check" name="optionsSoldout" id="itemSoldout" checked>
                                                 <label class="btn btn-outline-secondary flex-1" for="itemSoldout">품절</label>
-                                                <input type="radio" class="btn-check" name="options2" id="itemSale">
+                                                <input type="radio" class="btn-check" name="optionsSoldout" id="itemSale">
                                                 <label class="btn btn-outline-secondary flex-1" for="itemSale">판매</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mb-5">
-                                        <label for="" class="form-label">상품 이미지</label>
-                                        <div class="thumbs-swiper">
-                                            <div class="swiper-container">
-                                                <div class="swiper-wrapper">
-                                                    <div class="swiper-slide">
-                                                        <div class="item">
-                                                            <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
+                                    <div class="row gx-5 mb-5">
+                                        <div class="col-auto">
+                                            <label for="" class="form-label">대표 이미지</label>
+                                            <div class="thumbs-swiper">
+                                                <div class="item">
+                                                    <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
+                                                    <a href="javascript:;" class="btn-img-remove"><i class="material-icons">cancel</i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label for="" class="form-label">상품 이미지</label>
+                                            <div class="thumbs-swiper">
+                                                <div class="swiper-container">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide">
+                                                            <div class="item first">
+                                                                <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
+                                                                <a href="javascript:;" class="btn-img-remove"><i class="material-icons">cancel</i></a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="item">
-                                                            <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
+                                                        <div class="swiper-slide">
+                                                            <div class="item">
+                                                                <img src="../assets/images/@product.jpeg" class="rounded d-block" alt="">
+                                                                <a href="javascript:;" class="btn-img-remove"><i class="material-icons">cancel</i></a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="swiper-slide">
-                                                        <div class="item">
-                                                            <button type="button" aria-label="이미지 추가"><i class="icon-plus"></i></button>
+                                                        <div class="swiper-slide">
+                                                            <div class="item">
+                                                                <button type="button" aria-label="이미지 추가"><i class="icon-plus"></i></button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <script>
+                                                    var swiperThumbs = new Swiper('.thumbs-swiper .swiper-container', {
+                                                        slidesPerView: 'auto',
+                                                        spaceBetween: 12
+                                                    });
+                                                </script>
                                             </div>
-                                            <script>
-                                                var swiperThumbs = new Swiper('.thumbs-swiper .swiper-container', {
-                                                    slidesPerView: 2.7,
-                                                    spaceBetween: 12
-                                                });
-                                            </script>
                                         </div>
                                     </div>
                                     <div class="mb-5">
@@ -1486,7 +1660,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row gx-5">
+                                    <div class="row gx-5 mb-5">
                                         <div class="col">
                                             <label for="" class="form-label">APP 판매 단가</label>
                                             <select class="form-select">
@@ -1496,14 +1670,26 @@
                                                 <option value="3">Three</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="row gx-5">
                                         <div class="col">
-                                            <label for="" class="form-label">옵션</label>
+                                            <label for="" class="form-label">상품 옵션</label>
                                             <select class="form-select">
                                                 <option selected="">-</option>
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                                 <option value="3">Three</option>
                                             </select>
+                                            <div class="tag-wrap mt-2">
+                                                <div class="tag">
+                                                    <span>베트남산</span>
+                                                    <a href="" class="btn-tag-remove"><i class="material-icons">close</i></a>
+                                                </div>
+                                                <div class="tag">
+                                                    <span>베트남산</span>
+                                                    <a href="" class="btn-tag-remove"><i class="material-icons">close</i></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -6,7 +6,7 @@ body{width: 100%;height: 100%;}
 .header-title{font-size: 20px;font-weight: 700;}
 
 #aside{
-    width: 84px;position: fixed;background: #fff;top: 0;left: 0;bottom: 0;padding-top: 48px;
+    width: 84px;position: fixed;background: #fff;top: 0;left: 0;bottom: 0;padding-top: 48px;display: none;
 }
 .sidebar-nav{
     a{text-decoration: none;}
@@ -62,7 +62,7 @@ body{width: 100%;height: 100%;}
     img{width: 100%;height: 100%;object-fit: cover;}
 }
 
-#container{padding: 64px 1.5rem 1rem calc(84px + 1.5rem);height: 100%;}
+#container{/* padding: 64px 1.5rem 1rem calc(84px + 1.5rem); */height: 100%;padding: 1.5rem;}
 
 #main{
     display: flex;flex-direction: column;height: 100%;

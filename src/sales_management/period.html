@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="filter-body">
-                                <div class="row justify-content-between">
+                                <div class="row align-items-center">
                                     <div class="col-auto">
                                         <div class="row align-items-center gx-3">
                                             <div class="col-auto">
@@ -125,17 +125,36 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-auto">
-                                        <div class="row gx-3">
+                                    <div class="col">
+                                        <div class="row gx-3 justify-content-end align-items-center">
                                             <div class="col-auto">
-                                                <div class="form-set">
-                                                    <select class="form-select w-auto" aria-label="검색 범위 선택">
-                                                        <option selected>검색 전체</option>
-                                                        <option value="">고객사 명</option>
-                                                        <option value="">상품</option>
-                                                        <option value="">분류</option>
-                                                    </select>
-                                                    <input type="text" class="form-control with-icon-search" placeholder="검색어 입력" style="width: 320px">
+                                                <label for="" class="font-size-16">고객사</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="고객사 코드" style="width: 180px" readonly>
+                                                    <button class="btn btn-secondary btn-input-remove" type="button" arial-label="검색어 삭제"><i class="material-icons">close</i></button>
+                                                    <button class="btn btn-primary" type="button" arial-label="검색"><i class="icon-search-white"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto ms-2">
+                                                <label for="" class="font-size-16">상품</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="검색어를 입력하세요" style="width: 190px" readonly>
+                                                    <button class="btn btn-secondary btn-input-remove" type="button" arial-label="검색어 삭제"><i class="material-icons">close</i></button>
+                                                    <button class="btn btn-primary" type="button" arial-label="검색" data-bs-toggle="modal" data-bs-target="#modal-product-classfication"><i class="icon-search-white"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto ms-2">
+                                                <label for="" class="font-size-16">분류</label>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="분류 코드" style="width: 180px" readonly>
+                                                    <button class="btn btn-secondary btn-input-remove" type="button" arial-label="검색어 삭제"><i class="material-icons">close</i></button>
+                                                    <button class="btn btn-primary" type="button" arial-label="검색"><i class="icon-search-white"></i></button>
                                                 </div>
                                             </div>
                                             <div class="col-auto">

@@ -50,6 +50,12 @@ a{text-decoration: none;}
 
 .text-underline{text-decoration: underline;}
 
+.font-size-16{font-size: 16px;}
+
+.form-control[readonly]:focus{
+    background-color: $input-bg;border-color: $input-bg;
+}
+
 // circle checkbox
 .form-check{
     &.form-check-circle{
@@ -86,7 +92,7 @@ a{text-decoration: none;}
     }
     .btn-outline-secondary{
         border-color: #A0A0A0;color: $dark;
-        &:hover{background-color: #fff;color: $dark;}
+        &:hover{background-color: #fff;color: $dark;z-index: 0;}
     }
 }
 
@@ -101,6 +107,20 @@ a{text-decoration: none;}
     &:active,
     &:hover{
         background-color: #a0a0a0;border-color: #a0a0a0;
+    }
+}
+
+.input-group{
+    .form-control{
+        & + .btn-secondary{
+            background: $input-bg;border-color: $input-bg;margin-left: 0 !important;color: $dark;
+            &:focus{border-color:  $input-focus-border-color;background: #fff;}
+        }
+    }
+    .btn-input-remove{
+        padding-left: .5rem;padding-right: .5rem;
+        &:focus,
+        &:hover{background-color: $input-bg !important;border-color: $input-bg !important;}
     }
 }
 
@@ -203,6 +223,12 @@ thead{
     background: #fff;border-radius: 12px;padding: 1.5rem;height: 100%;
 }
 
+.frame-wrap{
+    display: flex;align-items: center;height: 100%;
+    .frame{flex: 1 1 100%;max-width: 20%;}
+    .frame-last-child{max-width: 100%;}
+    .next{padding: 0 1rem;flex: 0 0 auto;}
+}
 .frame{
     border: 1px solid #CFD4E1;height: 100%;border-radius: 12px;padding: 1rem 1.5rem;
 }
@@ -341,6 +367,14 @@ thead{
         }
     }
 }
-.btn-on-off{
-    height: 32px; font-size: 14px; font-weight: 400;
+
+.tag-wrap{margin: -2px;}
+.tag{
+    display: inline-flex;align-items: center;padding: 4px 10px;border-radius: 50rem;
+    border: 1px solid $secondary;margin: 2px;
+    span{font-size: 13px;font-weight: 500;}
+    .btn-tag-remove{
+        line-height: 1;margin-left: 3px;
+        i{vertical-align: top;font-size: 18px;}
+    }
 }
