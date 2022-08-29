@@ -93,6 +93,13 @@
         background-image: url('../images/icon-attachment-white.svg');
     }
 }
+.icon-graph{
+    width: 18px;height: 18px;background-image: url('../images/icon-graph.svg');
+    .btn:not(.btn-white):active > &,
+    .btn:not(.btn-white):hover > &{
+        background-image: url('../images/icon-graph-white.svg');
+    }
+}
 .icon-noimage{width: 47px;height: 47px; background-image: url('../images/icon-noimage.svg');}
 
 // icon in input
@@ -122,6 +129,7 @@
 
 .icon-attachment-down{width: 18px;height: 18px;background-image: url('../images/icon-attachment-down.svg');}
 
+.icon-arrow-up-right{width: 14px;height: 14px;background-image: url('../images/icon-arrow-up-right.svg');}
 .icon-arrow-down-lg{width: 16px;height: 10px;background-image: url('../images/icon-arrow-down-lg.svg');}
 
 .icon-search{width: 17px;height: 17px;background-image: url('../images/icon-search.svg');}

@@ -112,13 +112,14 @@ a{text-decoration: none;}
 
 .input-group{
     .form-control{
-        & + .btn-secondary{
-            background: $input-bg;border-color: $input-bg;margin-left: 0 !important;color: $dark;
-            &:focus{border-color:  $input-focus-border-color;background: #fff;}
-        }
+    }
+    .btn-secondary{
+        background: $input-bg;border-color: $input-bg;margin-left: 0 !important;color: $dark;
+        &:focus{border-color:  $input-focus-border-color;background: #fff;}
     }
     .btn-input-remove{
-        padding-left: .5rem;padding-right: .5rem;
+        padding-left: 0;padding-right: 0;
+        i{font-size: 20px;color: #787878;}
         &:focus,
         &:hover{background-color: $input-bg !important;border-color: $input-bg !important;}
     }
@@ -191,12 +192,12 @@ strong.required{
 .filter{
     background: #fff;border-radius: 12px;padding: 0 1.5rem;
     .filter-top{
-        padding: .75rem 0;border-bottom: 1px solid #EBEDF3;
+        padding: 1.125rem 0;border-bottom: 1px solid #EBEDF3;
     }
     .filter-body{
-        padding: .75rem 0;
+        padding: 1rem 0;
     }
-    .filter-title{font-size: 18px;font-weight: 700;}
+    .filter-title{font-size: 24px;font-weight: 700;}
 }
 
 .table-fixed{table-layout: fixed;}
@@ -212,6 +213,7 @@ strong.required{
 }
 
 .table-title{font-size: 24px;line-height: 1.25;font-weight: 700;}
+.table-title-sm{font-size: 18px;line-height: 1.2777;font-weight: 700;}
 
 
 thead{
@@ -259,16 +261,6 @@ thead{
         &:last-child{border-radius: 0 $form-select-border-radius $form-select-border-radius 0;}
     }
 }
-
-//IB Sheet
-/* body{
-    .GridMain1 .GridMain2 .GMHeaderText{
-        background: #43464C;color: #fff;padding-top: 9px;padding-bottom: 9px;font-size: 14px;font-weight: 400;border-right-color: #000;border-left-color: #000;
-    }
-    .GridMain1 .GridMain2 .GMCell{
-        padding-top: 10px;padding-bottom: 10px;font-size: 14px;
-    }
-} */
 
 .selected-date-range{
     position: relative;display: inline-block;vertical-align: middle;

@@ -25,19 +25,22 @@
                             <div class="table-wrap">
                                 <div class="table-top">
                                     <div class="row align-items-center justify-content-between">
-                                        <div class="col-auto">
-                                            <div class="year-select">
-                                                <input class="form-control" data-picker="year" value="2022" readonly>
-                                                <span>년</span>
-                                                <i class="icon-arrow-down-lg"></i>
-                                            </div>
+                                        <div class="col">
+                                            <select class="form-select w-auto" aria-label="검색 범위 선택">
+                                                <option selected="">2022년</option>
+                                            </select>
                                         </div>
                                         <div class="col-auto">
-                                            <div class="btn-group">
-                                                <input type="radio" class="btn-check" name="options2" id="table" checked>
-                                                <label class="btn btn-outline-secondary btn-sm" style="width: 100px" for="table">테이블</label>
-                                                <input type="radio" class="btn-check" name="options2" id="graph">
-                                                <label class="btn btn-outline-secondary btn-sm" style="width: 100px" for="graph">그래프</label>
+                                            <div class="page-title mb-0">공급사 가입 현황</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row align-items-center justify-content-end gx-3">
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px" data-bs-toggle="modal" data-bs-target="#modal-supplier-join-graph"><i class="icon-graph me-2"></i>그래프</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 112px"><i class="icon-download me-2"></i>엑셀 저장</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -46,70 +49,41 @@
                                     <div class="frame-wrap">
                                         <div class="frame">
                                             <div class="d-flex flex-column h-100">
-                                                <div class="table-title text-center mb-4">월간별 가입 현황</div>
-                                                <div class="flex-1 overflow-hidden">
-                                                    <div class="chart-wrap">
-                                                        <canvas id="myChart" width="100%" height="100%"></canvas>
-                                                    </div>
-                                                    <script>
-                                                        var chartArea = document.getElementById('myChart').getContext('2d');
-                                                        var myChart = new Chart(chartArea, {
-                                                            type: 'bar',
-                                                            data: {
-                                                                labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-                                                                datasets: [{
-                                                                    data: [65, 59, 80, 81, 56, 55, 40, 100, 150, 160, 180, 30],
-                                                                    backgroundColor: '#434AFA',
-                                                                    barPercentage: 0.4,
-                                                                }]
-                                                            },
-                                                            options: {
-                                                                responsive: true,
-                                                                maintainAspectRatio: false,
-                                                                tooltips: {
-                                                                    enabled: false
-                                                                },
-                                                                plugins: {
-                                                                    legend: {
-                                                                        display: false,
-                                                                    },
-                                                                },
-                                                                indexAxis: 'y',
-                                                                scales: {
-                                                                    x: [{
-                                                                        ticks: {
-                                                                            beginAtZero: true,
-                                                                            display: false,
-                                                                            beginAtZero: true,
-                                                                            max: 200, //**젤 높은 data값 + 10 넣어줄것!!
-                                                                            font: {
-                                                                                size: 10,
-                                                                            }
-                                                                        },
-                                                                        gridLines: {
-                                                                            // display: false,
-                                                                            drawTicks: false
-                                                                        }
-                                                                    }],
-                                                                    y: [{
-                                                                        ticks: {
-                                                                            beginAtZero: true,
-                                                                            // display: false
-                                                                            stepSize: 100,
-                                                                            font: {
-                                                                                size: 12,
-                                                                            }
-                                                                        },
-                                                                        gridLines: {
-                                                                            display: false,
-                                                                            lineWidth: 3
-                                                                            // drawTicks: false
-                                                                        },
-                                                                    }]
-                                                                },
-                                                            }
-                                                        });
-                                                    </script>
+                                                <div class="table-title text-center mb-4">월간 내역</div>
+                                                <div class="flex-1">
+                                                    <table class="table table-striped table-hover">
+                                                        <colgroup>
+                                                            <col style="width:50%">
+                                                        </colgroup>
+                                                        <thead class="table-dark">
+                                                            <tr>
+                                                                <th class="text-center">구분</th>
+                                                                <th class="text-center">가입건 수</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">1주 (1일~5일)</td>
+                                                                <td class="text-center text-primary">59</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">2주 (6일~12일)</td>
+                                                                <td class="text-center text-primary">47</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">3주 (13일~19일)</td>
+                                                                <td class="text-center text-primary">66</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">4주 (20일~26일)</td>
+                                                                <td class="text-center text-primary">71</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">5주 (27일~30일)</td>
+                                                                <td class="text-center text-primary">93</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                                 <dl class="supplier-join-sum">
                                                     <dt>월간 합계</dt>
@@ -122,7 +96,7 @@
                                         </div>
                                         <div class="frame">
                                             <div class="d-flex flex-column h-100">
-                                                <div class="table-title text-center mb-4">주간별 가입 현황</div>
+                                                <div class="table-title text-center mb-4">주간 내역</div>
                                                 <div class="flex-1">
                                                     <!-- data empty -->
                                                     <!-- <div class="d-flex h-100 align-items-center justify-content-center">
@@ -173,7 +147,7 @@
                                         </div>
                                         <div class="frame">
                                             <div class="d-flex flex-column h-100">
-                                                <div class="table-title text-center mb-4">일간별 가입 현황</div>
+                                                <div class="table-title text-center mb-4">일간 내역</div>
                                                 <div class="flex-1">
                                                     <!-- data empty -->
                                                     <!-- <div class="d-flex h-100 align-items-center justify-content-center">
@@ -189,14 +163,13 @@
                                         <div class="next">
                                             <i class="icon-slide-arrow"></i>
                                         </div>
-                                            <div class="frame frame-last-child">
-                                                <div class="d-flex flex-column h-100">
-                                                    <div class="table-title text-center mb-4">공급사 가입 목록</div>
-                                                    <div class="flex-1">
-                                                        <!-- data empty -->
-                                                        <div class="d-flex h-100 align-items-center justify-content-center">
-                                                            <p class="data-empty">일간 현황에서 선택해주세요.</p>
-                                                        </div>
+                                        <div class="frame frame-last-child">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="table-title text-center mb-4">공급사 가입 목록</div>
+                                                <div class="flex-1">
+                                                    <!-- data empty -->
+                                                    <div class="d-flex h-100 align-items-center justify-content-center">
+                                                        <p class="data-empty">일간 현황에서 선택해주세요.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -207,13 +180,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- //실컨텐츠 -->
+
+            </main> <!-- main -->
         </div>
-    </div>
-
-    <!-- //실컨텐츠 -->
-
-    </main> <!-- main -->
-    </div>
     </div>
     @@include('@@webRoot/_include/_modal.html')
 </body>

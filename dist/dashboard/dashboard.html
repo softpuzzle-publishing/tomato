@@ -16,10 +16,21 @@
     <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
 
+    <!-- tomato 기존 css -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/jquery-ui.css?version=202207211805" />
+<link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/normalize.css?version=202207211805" />
+<link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/fonts.css?version=202207211805" />
+<link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/glyphs.css?version=202207211805" />
+<link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/utils.css?version=202207211805" />
+<link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/style.css?version=202207211805" />
+<link rel="stylesheet" type="text/css" href="https://dev.b2b.tomato-pos.com/common/css/tomato.css?version=202207211805" /> -->
+
     <!-- publilshing css -->
     <link rel="stylesheet" href="../assets/css/tomato.b2b.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/css/tomato.mdi.new.css">
 
     <!-- library js -->
     <script src="../assets/lib/jquery/jquery.min.js"></script>
@@ -148,6 +159,27 @@
                 </nav>
             </aside>
             <main id="main">
+
+                <div class="ta-mdi">
+                    <a class="ta-mdi__tab" data-menu-id="113001007" onclick="movePage(null, &quot;전표별 발주 접수 현황&quot;, 113001007)">
+                        전표별 발주 접수 현황
+                        <div class="ta-mdi__cta" onclick="reloadTab(&quot;113001007&quot;);">
+                            <i class="glyph refresh"></i>
+                        </div>
+                        <div class="ta-mdi__cta" onclick="removeTab(&quot;113001007&quot;);">
+                            <i class="glyph close"></i>
+                        </div>
+                    </a>
+                    <a class="ta-mdi__tab ta-mdi__tab--active" data-menu-id="114001003" onclick="movePage(null, &quot;고객사별 상품별 매출액/재고현황&quot;, 114001003)">
+                        고객사별 상품별 매출액/재고현황
+                        <div class="ta-mdi__cta" onclick="reloadTab(&quot;114001003&quot;);">
+                            <i class="glyph refresh"></i>
+                        </div>
+                        <div class="ta-mdi__cta" onclick="removeTab(&quot;114001003&quot;);">
+                            <i class="glyph close"></i>
+                        </div>
+                    </a>
+                </div>
 
                 <nav class="lnb">
 
